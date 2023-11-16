@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <router-view></router-view>
     <!-- Navigation Drawer -->
     <v-navigation-drawer app v-model="drawer">
   <v-list dense>
@@ -198,7 +199,7 @@ export default {
         category: 'Korean Food',
       },
       {
-        id: 11,
+        id: 12,
         name: 'Hotteok',
         description: 'Korean sweet pancakes filled with brown sugar and nuts.',
         price: 4.99,
@@ -259,7 +260,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style >
 .ecommerce-container {
   display: flex;
   justify-content: center;
@@ -273,7 +274,7 @@ export default {
 }
 .custom-navbar {
   background: linear-gradient(to right, #8B4513, #D2B48C); /* Gradient background */
-  /* You can customize the colors and background properties as needed */
+  
 }
 .product-list {
   display: flex;
@@ -282,7 +283,6 @@ export default {
   gap: 10px;
 }
 
-/* Add a custom style for the navigation link color */
 
 .product-card {
   width: calc(33.33% - 20px);

@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <router-view></router-view>
     <!-- Navigation Drawer -->
     <v-navigation-drawer app v-model="drawer">
       <v-list dense>
@@ -44,11 +45,11 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Add a custom style for the navigation link color */
+<style>
 
 
-/* Add a custom style for the home title color */
+
+
 .home-title {
   color: #ffffff; /* Change the color to your preferred value */
 }

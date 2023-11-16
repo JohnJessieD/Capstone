@@ -68,7 +68,7 @@ export default {
   };
   </script>
   
-<style scoped>
+<style>
 .best-products {
   padding: 20px;
 }

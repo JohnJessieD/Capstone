@@ -1,6 +1,7 @@
 <template>
 <Navbar />  
   <div>
+    
     <div class="tea-image">
       <img src="/img/malay_dynastea.png" alt="Malay Dynastea" class="image-hover" />
 
@@ -52,7 +53,7 @@ export default {
 
 <style scoped>
 .about-page {
-  padding: 20px;
+  padding: 0px;
 }
 
 .about-heading {
@@ -67,7 +68,7 @@ export default {
   max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -76,7 +77,7 @@ export default {
 }
 
 .ecommerce-form {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -84,7 +85,7 @@ export default {
 }
 
 .location {
-  margin-top: 20px;
+  margin-top: 10px; /* Adjust or set to 0 */
   font-size: 1.2rem;
 }
 
