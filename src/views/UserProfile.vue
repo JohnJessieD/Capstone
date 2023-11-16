@@ -1,65 +1,73 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="12" md="6">
-        <h2>User Profile</h2>
-        <v-card>
-          <v-card-title>
-            Personal Information
-          </v-card-title>
-          <v-card-text>
-            <v-form>
-              <v-text-field
-                label="Name"
-                v-model="user.name"
-                :readonly="!isEditing"
-              ></v-text-field>
-              <v-text-field
-                label="Email"
-                v-model="user.email"
-                disabled
-              ></v-text-field>
-              <v-text-field
-                label="Phone Number"
-                v-model="user.phone"
-                :readonly="!isEditing"
-              ></v-text-field>
-              <v-text-field
-                label="Address"
-                v-model="user.address"
-                :readonly="!isEditing"
-              ></v-text-field>
-              <!-- Add more profile fields as needed -->
+  <div>
+    <Navbar />
+    <v-container>
+      <v-row>
+        <v-col cols="12" md="6">
+          <h2>User Profile</h2>
+          <v-card>
+            <v-card-title>
+              Personal Information
+            </v-card-title>
+            <v-card-text>
+              <v-form ref="userForm">
+                <v-text-field
+                  label="Name"
+                  v-model="user.name"
+                  :readonly="!isEditing"
+                ></v-text-field>
+                <v-text-field
+                  label="Email"
+                  v-model="user.email"
+                  disabled
+                ></v-text-field>
+                <v-text-field
+                  label="Phone Number"
+                  v-model="user.phone"
+                  :readonly="!isEditing"
+                ></v-text-field>
+                <v-text-field
+                  label="Address"
+                  v-model="user.address"
+                  :readonly="!isEditing"
+                ></v-text-field>
+                <!-- Add more profile fields as needed -->
 
-              <!-- Additional fields for English site -->
-              <v-text-field
-                label="Birthdate"
-                v-model="user.birthdate"
-                :readonly="!isEditing"
-              ></v-text-field>
-              <v-text-field
-                label="Gender"
-                v-model="user.gender"
-                :readonly="!isEditing"
-              ></v-text-field>
-            </v-form>
-          </v-card-text>
-          <v-card-actions>
-            <v-btn color="primary" @click="isEditing ? saveChanges() : editProfile">
-              {{ isEditing ? 'Save' : 'Edit' }}
-            </v-btn>
-            <v-btn v-if="isEditing" @click="cancelEdit" color="error">
-              Cancel
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+                <!-- Additional fields for English site -->
+                <v-text-field
+                  label="Birthdate"
+                  v-model="user.birthdate"
+                  :readonly="!isEditing"
+                ></v-text-field>
+                <v-text-field
+                  label="Gender"
+                  v-model="user.gender"
+                  :readonly="!isEditing"
+                ></v-text-field>
+              </v-form>
+            </v-card-text>
+            <v-card-actions>
+              <v-btn color="primary" @click="isEditing ? saveChanges() : editProfile">
+                {{ isEditing ? 'Save' : 'Edit' }}
+              </v-btn>
+              <v-btn v-if="isEditing" @click="cancelEdit" color="error">
+                Cancel
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
+import Navbar from '../views/Navbar.vue';
+
 export default {
+  components: {
+    Navbar,
+  },
   data() {
     return {
       user: {

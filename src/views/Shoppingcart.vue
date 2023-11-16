@@ -1,29 +1,37 @@
 <template>
-  <div class="shopping-cart">
-    <h2>Shopping Cart</h2>
-    <div v-if="cartItems.length === 0" class="empty-cart-message">
-      Your shopping cart is empty.
-    </div>
-    <div v-else>
-      <div v-for="item in cartItems" :key="item.id" class="cart-item">
-        <!-- Display cart items here -->
-        <div class="item-details">
-          <div class="item-name">{{ item.name }}</div>
-          <div class="item-quantity">Quantity: {{ item.quantity }}</div>
-          <div class="item-price">Price: ${{ item.price }}</div>
-        </div>
-        <button @click="removeFromCart(item)" class="remove-button">Remove</button>
+  <div>
+    <Navbar />
+    <div class="shopping-cart">
+      <h2>Shopping Cart</h2>
+      <div v-if="cartItems.length === 0" class="empty-cart-message">
+        Your shopping cart is empty.
       </div>
-    </div>
-    <div v-if="cartItems.length > 0" class="cart-summary">
-      <div class="total-price">Total Price: ${{ calculateTotalPrice() }}</div>
-      <button @click="checkout" class="checkout-button">Checkout</button>
+      <div v-else>
+        <div v-for="item in cartItems" :key="item.id" class="cart-item">
+          <!-- Display cart items here -->
+          <div class="item-details">
+            <div class="item-name">{{ item.name }}</div>
+            <div class="item-quantity">Quantity: {{ item.quantity }}</div>
+            <div class="item-price">Price: ${{ item.price }}</div>
+          </div>
+          <button @click="removeFromCart(item)" class="remove-button">Remove</button>
+        </div>
+      </div>
+      <div v-if="cartItems.length > 0" class="cart-summary">
+        <div class="total-price">Total Price: ${{ calculateTotalPrice() }}</div>
+        <button @click="checkout" class="checkout-button">Checkout</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Navbar from '../views/Navbar.vue';
+
 export default {
+  components: {
+    Navbar,
+  },
   data() {
     return {
       cartItems: [], // Initialize as an empty array
@@ -48,6 +56,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .shopping-cart {
   max-width: 600px;
@@ -106,4 +115,4 @@ export default {
   border-radius: 4px;
   cursor: pointer;
 }
-</style> 
+</style>

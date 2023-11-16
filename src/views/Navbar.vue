@@ -52,4 +52,6 @@ export default {
 .home-title {
   color: #ffffff; /* Change the color to your preferred value */
 }
+
+
 </style>

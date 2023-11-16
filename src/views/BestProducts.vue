@@ -1,4 +1,7 @@
+
 <template>
+  <div class="page-container">
+    <Navbar />
     <div class="best-products">
       <h2>Best Milk Tea Products</h2>
       <div class="product-list">
@@ -11,10 +14,16 @@
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
   
-  <script>
-  export default {
+<script>
+import Navbar from '../views/Navbar.vue';
+
+export default {
+  components: {
+    Navbar,
+  },
     data() {
       return {
         bestMilkTeaProducts: [
