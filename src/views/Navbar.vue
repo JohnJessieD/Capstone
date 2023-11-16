@@ -22,9 +22,9 @@
       <router-link to="/">
         <v-toolbar-title class="home-title">Malay Dynastea</v-toolbar-title>
       </router-link>
-      <v-btn @click="$router.push('/BestProducts')">BestProducts</v-btn>
-      <v-btn @click="$router.push('/shopping-cart')">Shopping Cart</v-btn>
-      <v-btn @click="$router.push('/OrderHistory')">Order History</v-btn>
+      <v-btn @click="$router.push({ name: 'BestProducts' })">BestProducts</v-btn>
+      <v-btn @click="$router.push({ name: 'shopping-cart' })">Shopping Cart</v-btn>
+      <v-btn @click="$router.push({ name: 'OrderHistory' })">Order History</v-btn>
     </v-app-bar>
   </v-app>
 </template>
@@ -35,10 +35,10 @@ export default {
     return {
       drawer: false,
       drawerItems: [
-        { icon: 'mdi-account', title: 'User Profile', route: '/UserProfile' },
-        { icon: 'mdi-information', title: 'About', route: '/about' },
-        { icon: 'mdi-login', title: 'Login', route: '/login' },
-        { icon: 'mdi-account-plus', title: 'Register', route: '/register' },
+        { icon: 'mdi-account', title: 'User Profile', route: { name: 'user-profile' } },
+        { icon: 'mdi-information', title: 'About', route: { name: 'about' } },
+        { icon: 'mdi-login', title: 'Login', route: { name: 'login' } },
+        { icon: 'mdi-account-plus', title: 'Register', route: { name: 'register' } },
       ],
     };
   },
@@ -46,13 +46,7 @@ export default {
 </script>
 
 <style>
-
-
-
-
 .home-title {
   color: #ffffff; /* Change the color to your preferred value */
 }
-
-
 </style>
