@@ -39,57 +39,13 @@
     </v-list-item-group>
   </v-list>
 </v-navigation-drawer>
-<v-navigation-drawer app v-model="drawer">
-  <v-list dense>
-    <v-list-item-group>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-account</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/user">User</router-link>
-        </v-list-item-title>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-information</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/about">About</router-link>
-        </v-list-item-title>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-login</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/login">Login</router-link>
-        </v-list-item-title>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-account-plus</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/register">Register</router-link>
-        </v-list-item-title>
-      </v-list-item>
-    </v-list-item-group>
-  </v-list>
-</v-navigation-drawer>
-
-
-<v-app-bar app color="primary">
+<v-app-bar app class="custom-navbar" color="primary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <!-- Link back to home -->
-     
       <v-toolbar-title>Malay Dynastea</v-toolbar-title>
       <v-btn @click="$router.push('/BestProducts')">BestProducts</v-btn> 
       <v-btn @click="$router.push('/shopping-cart')">Shopping Cart</v-btn>
-      <v-btn @click="$router.push('/OrderHistory')">Order History</v-btn> 
+      <v-btn @click="$router.push('/OrderHistory')">Order History</v-btn>
     </v-app-bar>
-
-    <!-- Main Content -->
     <v-main>
       <div class="ecommerce-container">
         <div class="product-list">
@@ -312,23 +268,30 @@ export default {
   background-image: url('https://i.pinimg.com/564x/2e/e5/37/2ee537a4ac153415c82841ad85e1940a.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 80vh; /* Adjusted container height */
+  background-color: #add8e6; 
 }
-
+.custom-navbar {
+  background: linear-gradient(to right, #8B4513, #D2B48C); /* Gradient background */
+  /* You can customize the colors and background properties as needed */
+}
 .product-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 20px;
+  gap: 10px;
 }
+
+/* Add a custom style for the navigation link color */
 
 .product-card {
   width: calc(33.33% - 20px);
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px; /* Adjusted border-radius */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 350px; /* Adjusted card height */
 }
 
 .product-card-inner {
@@ -339,8 +302,8 @@ export default {
 
 .product-image {
   max-width: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 8px; /* Adjusted border-radius */
+  border-top-right-radius: 8px; /* Adjusted border-radius */
 }
 
 .product-details {
@@ -369,25 +332,25 @@ export default {
 }
 
 .v-card {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .v-card-title {
   background-color: #2196F3;
   color: #fff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 8px; /* Adjusted border-radius */
+  border-top-right-radius: 8px; /* Adjusted border-radius */
 }
 
 @media (max-width: 768px) {
   .product-card {
-    width: calc(50% - 20px);
+    width: calc(33.33% - 20px); /* Adjusted card width for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .product-card {
-    width: calc(100% - 20px);
+    width: calc(50% - 20px); /* Adjusted card width for smaller screens */
   }
 }
 </style>
