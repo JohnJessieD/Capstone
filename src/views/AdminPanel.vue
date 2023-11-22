@@ -1,17 +1,14 @@
 <!-- YourView.vue -->
 <template>
-  <div>
-    
-    <AboutView /> <!-- Using the About component -->
-  </div>
+    <AdminPanel /> <!-- Using the AdminPanel component -->
 </template>
 
 <script>
-import AboutView from '@/components/AboutView.vue'; // Adjust the path accordingly
+import AdminPanel from '@/components/AdminPanel.vue'; // Adjust the path accordingly
 
 export default {
   components: {
-    AboutView, // Registering the About component
+    AdminPanel, // Registering the AdminPanel component
   },
   // Your view component logic goes here
 }

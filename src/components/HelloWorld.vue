@@ -1,56 +1,48 @@
 <template>
   <v-app>
-    <router-view></router-view>
-    <!-- Navigation Drawer -->
-    <v-navigation-drawer app v-model="drawer">
-  <v-list dense>
-    <v-list-item-group>
-      <v-list-item>
-  <v-list-item-icon>
-    <v-icon>mdi-account</v-icon>
-  </v-list-item-icon>
-  <v-list-item-title>
-    <router-link to="/UserProfile">User Profile</router-link>
-  </v-list-item-title>
-</v-list-item>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-information</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/about">About</router-link>
-        </v-list-item-title>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-login</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/login">Login</router-link>
-        </v-list-item-title>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>mdi-account-plus</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>
-          <router-link to="/register">Register</router-link>
-        </v-list-item-title>
-      </v-list-item>
-    </v-list-item-group>
-  </v-list>
-</v-navigation-drawer>
-<v-app-bar app class="custom-navbar" color="primary">
+    <v-navigation-drawer app v-model="drawer" class="drawer-custom">
+      <v-list dense>
+        <v-list-item-group>
+          <v-list-item v-for="(item, index) in drawerItems" :key="index">
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="nav-link">
+                <router-link :to="item.route">{{ item.title }}</router-link>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
+    <!-- App Bar -->
+    <v-app-bar app color="primary" class="app-bar-custom" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Malay Dynastea</v-toolbar-title>
-      <v-btn @click="$router.push('/BestProducts')">BestProducts</v-btn> 
-      <v-btn @click="$router.push('/shopping-cart')">Shopping Cart</v-btn>
-      <v-btn @click="$router.push('/OrderHistory')">Order History</v-btn>
+      <v-toolbar-title class="home-title">
+  <router-link to="/HomeView" style="text-decoration: none; color: inherit;">
+    Malay Dynastea
+  </router-link>
+</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="searchQuery"
+        label="Search"
+        prepend-icon="mdi-magnify"
+        @input="searchProducts"
+      ></v-text-field>
+
+      <v-btn class="nav-btn" @click="$router.push({ name: 'BestProducts' })">Best Products</v-btn>
+      <v-btn class="nav-btn" @click="$router.push({ name: 'shopping-cart' })">Shopping Cart</v-btn>
+      <v-btn class="nav-btn" @click="$router.push({ name: 'OrderHistory' })">Order History</v-btn>
     </v-app-bar>
+ 
+
     <v-main>
       <div class="ecommerce-container">
         <div class="product-list">
-          <h2>Products</h2>
+       
           <div class="product-card" v-for="product in products" :key="product.id">
             <div class="product-card-inner">
               <img :src="product.image" :alt="product.name" class="product-image">
@@ -63,6 +55,7 @@
                   <span class="category-label" v-else-if="product.category === 'Korean Food'">Korean Food</span>
                 </div>
                 <v-btn @click="addToCart(product)" color="primary">Add to Cart</v-btn>
+
               </div>
             </div>
           </div>
@@ -100,14 +93,26 @@
 </template>
 
 <script>
+
 export default {
+
   data() {
+    
     return {
+      drawer: false,
+      drawerItems: [
+        { icon: 'mdi-account', title: 'User Profile', route: { name: 'user-profile' } },
+        { icon: 'mdi-information', title: 'About', route: { name: 'about' } },
+        { icon: 'mdi-login', title: 'Login', route: { name: 'login' } },
+        { icon: 'mdi-account-plus', title: 'Register', route: { name: 'register' } },
+      ],
+  products: [],
+      categories: [],
+      selectedProduct: {},
+      quantity: 1,  
       searchQuery: '',
     searchResults: [],
       showModal: false,
-      selectedProduct: {},
-      quantity: 1,
       cart: [], 
       drawer: false,
       products: [
@@ -218,12 +223,32 @@ export default {
     };
   },
   methods: {
-    
     addToCart(product) {
-      // Implement cart logic (e.g., add the product to the cart)
+  const cartItemIndex = this.cart.findIndex(item => item.product.id === product.id);
+
+  if (cartItemIndex !== -1) {
+    // If the product is already in the cart, update the quantity
+    this.cart[cartItemIndex].quantity += this.quantity;
+  } else {
+    // If the product is not in the cart, add it with the chosen quantity
+    this.cart.push({
+      product: product,
+      quantity: this.quantity,
+    });
+  }
+
+
+
     },
     filterProducts(category) {
-      // Implement filter logic (e.g., display products from the selected category)
+      if (category.name === 'All') {
+    // If the selected category is 'All', show all products
+    this.filteredProducts = this.products;
+  } else {
+    // Filter products based on the selected category
+    this.filteredProducts = this.products.filter(product => product.category === category.name);
+  }
+},
    },
    openModal(product) {
       this.selectedProduct = product;
@@ -257,7 +282,14 @@ export default {
     removeItemFromCart(index) {
       this.cart.splice(index, 1);
     },
-  },
+    searchProducts() {
+      // Implement your search logic here
+      // You can filter products based on the searchQuery and update the display
+      // For example, you can set this.searchResults to the filtered products
+      this.searchResults = this.products.filter((product) =>
+        product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    },
 };
 </script>
 <style >
@@ -266,11 +298,12 @@ export default {
   justify-content: center;
   align-items: flex-start;
   margin: 20px;
-  background-image: url('https://i.pinimg.com/564x/2e/e5/37/2ee537a4ac153415c82841ad85e1940a.jpg');
+  background-image: url('https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/245382281_233644962130684_5227005316872638252_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFVy1qk9GdPAM2JDaX659I3oOlZRQC8stmg6VlFALyy2XjboV2KCFQtLTafyI73Vb79XSXI7wxqnOUPLkOTpCbi&_nc_ohc=zILGnZxZs1kAX_rprCU&_nc_ht=scontent.fmnl30-2.fna&oh=00_AfDHdtI1yrnk8O9475APGBy2QgFO_cOZyFuqJ00X_AXhhw&oe=65621276'); /* Replace with your actual image URL */
   background-size: cover;
-  background-position: center;
-  min-height: 80vh; /* Adjusted container height */
-  background-color: #add8e6; 
+  background-repeat: no-repeat;
+  color: #f5ebe6;
+  min-height: 50vh; /* Adjusted container height */
+  
 }
 .custom-navbar {
   background: linear-gradient(to right, #8B4513, #D2B48C); /* Gradient background */
@@ -284,16 +317,17 @@ export default {
 }
 
 
+
 .product-card {
-  width: calc(33.33% - 20px);
+  width: 200px; /* Adjusted card width for smaller size */
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #ddd;
-  border-radius: 8px; /* Adjusted border-radius */
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 350px; /* Adjusted card height */
+  height: 200px; /* Adjusted card height */
+  color: #2e2b2b;
 }
-
 .product-card-inner {
   display: flex;
   flex-direction: column;
@@ -324,7 +358,9 @@ export default {
   border-radius: 3px;
   font-weight: bold;
 }
-
+.search-bar {
+  max-width: 250px; /* Adjust the maximum width of the search bar */
+  margin-right: 16px;}
 /* Style for the modal */
 .v-dialog__content {
   background-color: rgba(255, 255, 255, 0.9);
@@ -337,7 +373,7 @@ export default {
 
 .v-card-title {
   background-color: #2196F3;
-  color: #fff;
+  color: #2e2b2b;
   border-top-left-radius: 8px; /* Adjusted border-radius */
   border-top-right-radius: 8px; /* Adjusted border-radius */
 }

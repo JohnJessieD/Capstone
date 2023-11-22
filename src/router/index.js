@@ -1,11 +1,16 @@
 // router.js
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
-    path: '/',
+    path: '/homeview',
     name: 'home',
     component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
+  },
+  {
+    path: '/',
+    name: 'MainPage',
+    component: () => import(/* webpackChunkName: "mainpage" */ '../views/MainPage.vue'), // Added '.vue'
   },
   {
     path: '/about',
@@ -15,19 +20,14 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
-  },
-  {
-    path: '/Navbar',
-    name: 'Navbar',
-    component: () => import(/* webpackChunkName: "Navbar" */ '../views/Navbar.vue')
+    component: () => import(/* webpackChunkName: "login" */ '../views/login.vue')
   },
   {
     path: '/register',
     name: 'register',
     component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
   },
-   {
+  {
     path: '/Shopping-cart',
     name: 'shopping-cart',
     component: () => import(/* webpackChunkName: "ShoppingCart" */ '../views/Shoppingcart.vue')
@@ -35,24 +35,28 @@ const routes = [
   {
     path: '/UserProfile',
     name: 'user-profile',
-    component: () => import(/* webpackChunkName: "UserProfile" */ '../views/UserProfile')
+    component: () => import(/* webpackChunkName: "UserProfile" */ '../views/UserProfile.vue') // Added '.vue'
   },
   {
-    path: '/OrderHistory', // Add the route for order history
+    path: '/OrderHistory',
     name: 'OrderHistory',
-    component:() => import(/* webpackChunkName: " OrderHistory" */ '../views/OrderHistory')
+    component: () => import(/* webpackChunkName: "OrderHistory" */ '../views/OrderHistory.vue') // Added '.vue'
   },
   {
-    path: '/BestProducts',
+    path: '/BestProductList',
     name: 'BestProducts',
-    component:() => import(/* webpackChunkName: " BestProducts" */ '../views/BestProducts')
+    component: () => import(/* webpackChunkName: "BestProducts" */ '../views/BestProducts.vue') // Added '.vue'
   },
-  
-]
+  { path: '/ProductList', component: () => import(/* webpackChunkName: "ProductList" */ '../views/ProductList.vue') },
+  { path: '/OrderList', component: () => import(/* webpackChunkName: "OrderList" */ '../views/OrderList.vue') },
+  { path: '/BranchList', component: () => import(/* webpackChunkName: "BranchList" */ '../views/BranchList.vue') },
+  { path: '/AdminPanel', component: () => import(/* webpackChunkName: "AdminPanel" */ '../views/AdminPanel.vue') },
+  { path: '/UsersList', component: () => import(/* webpackChunkName: "UsersList" */ '../views/UsersList.vue') },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;
