@@ -1,0 +1,408 @@
+CRITICAL - 2023-11-27 03:37:32 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Usercontroller.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:29:09 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 68.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:34:31 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:34:49 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:35:58 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:37:10 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:37:55 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:40:24 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:41:43 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:43:36 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:45:48 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:47:02 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:47:41 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:48:49 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 04:49:48 --> Class "APP\Models\Usermodel" not found
+in APPPATH\Controllers\Usercontroller.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->login()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+ERROR - 2023-11-27 04:55:22 --> mysqli_sql_exception: Column 'username' cannot be null in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\UserController->register()
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-11-27 04:55:22 --> Column 'username' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `password`, `token`, `status`, `role`) VALUES (:username:, :password:, :token:, :status:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+ERROR - 2023-11-27 04:55:50 --> mysqli_sql_exception: Column 'username' cannot be null in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\UserController->register()
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-11-27 04:55:50 --> Column 'username' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `password`, `token`, `status`, `role`) VALUES (:username:, :password:, :token:, :status:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+ERROR - 2023-11-27 05:04:57 --> mysqli_sql_exception: Column 'username' cannot be null in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\UserController->register()
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-11-27 05:04:57 --> Column 'username' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `password`, `token`, `status`, `role`) VALUES (:username:, :password:, :token:, :status:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 05:41:10 --> Unclosed '{' on line 11
+in APPPATH\Controllers\Usercontroller.php on line 77.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Usercontroller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Usercontroller')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Usercontroller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 05:41:11 --> Unclosed '{' on line 11
+in APPPATH\Controllers\Usercontroller.php on line 77.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Usercontroller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Usercontroller')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Usercontroller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:24 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:26 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:27 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:27 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:28 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:28 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:28 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:28 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:28 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:28 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:29 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 06:12:29 --> Undefined property: App\Controllers\UserController::$input
+in APPPATH\Controllers\Usercontroller.php on line 41.
+ 1 APPPATH\Controllers\Usercontroller.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\Usercontroller.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+ERROR - 2023-11-27 07:37:01 --> mysqli_sql_exception: Column 'username' cannot be null in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\UserController->register()
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-11-27 07:37:01 --> Column 'username' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `password`, `token`, `status`, `role`) VALUES (:username:, :password:, :token:, :status:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+ERROR - 2023-11-27 07:37:06 --> mysqli_sql_exception: Column 'username' cannot be null in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\UserController->register()
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2023-11-27 07:37:06 --> Column 'username' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `password`, `token`, `status`, `role`) VALUES (:username:, :password:, :token:, :status:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usercontroller.php(25): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 07:49:55 --> CodeIgniter\Router\RouteCollection::get(): Argument #1 ($from) must be of type string, array given, called in C:\laragon\www\Capstone\CODEIGNITER 4\app\Config\Routes.php on line 11
+in SYSTEMPATH\Router\RouteCollection.php on line 1016.
+ 1 APPPATH\Config\Routes.php(11): CodeIgniter\Router\RouteCollection->get([...], '/api/UserList', 'Admin::Userlist')
+ 2 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 07:49:56 --> CodeIgniter\Router\RouteCollection::get(): Argument #1 ($from) must be of type string, array given, called in C:\laragon\www\Capstone\CODEIGNITER 4\app\Config\Routes.php on line 11
+in SYSTEMPATH\Router\RouteCollection.php on line 1016.
+ 1 APPPATH\Config\Routes.php(11): CodeIgniter\Router\RouteCollection->get([...], '/api/UserList', 'Admin::Userlist')
+ 2 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 07:49:58 --> CodeIgniter\Router\RouteCollection::get(): Argument #1 ($from) must be of type string, array given, called in C:\laragon\www\Capstone\CODEIGNITER 4\app\Config\Routes.php on line 11
+in SYSTEMPATH\Router\RouteCollection.php on line 1016.
+ 1 APPPATH\Config\Routes.php(11): CodeIgniter\Router\RouteCollection->get([...], '/api/UserList', 'Admin::Userlist')
+ 2 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-11-27 07:51:33 --> Class "App\Controllers\UserModel" not found
+in APPPATH\Controllers\Admin.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')

@@ -1,45 +1,55 @@
 <template>
-  <div class="container">
-    <div class="login-container">
-      <h2>Login</h2>
-      <form @submit.prevent="login" class="login-form">
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" v-model="username" class="form-control" required />
-        </div>
+    <div class="container">
+  <v-sheet width="300" class="mx-auto login-container">
+    <v-form fast-fail @submit.prevent="login">
+      <v-text-field v-model="username" label="Username" required></v-text-field>
 
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" v-model="password" class="form-control" required />
-        </div>
+      <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
 
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
+      <v-btn type="submit" block class="mt-2">Login</v-btn>
+    </v-form>
+    
+    <p v-if="message" class="error-message">{{ message }}</p>
 
-      <!-- Link to the registration page -->
-      <router-link to="/Register">Don't have an account? Register here.</router-link>
+    <div class="forgot-register-links">
+      <router-link to="/forgot-password">Forgot Password?</router-link>
+      <v-card-text>If you don't have an account, register <router-link to="/register">here</router-link> first.</v-card-text>
     </div>
-  </div>
+  </v-sheet>
+</div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      username: '',
-      password: '',
-    };
-  },
-  methods: {
-    login() {
-      // Here you can add your authentication logic
-      // For simplicity, let's just log the credentials for now
-      console.log('Username:', this.username);
-      console.log('Password:', this.password);
+import axios from 'axios';
 
-      // After successful login, you can redirect to another route
-      // For example, redirect to a dashboard
-      this.$router.push('/HomeView');
+export default {
+  data: () => ({
+    username: '',
+    password: '',
+    message: '',
+  }),
+  methods: {
+    async login() {
+      try {
+        const response = await axios.post('api/login', {
+          username: this.username,
+          password: this.password,
+        });
+
+        if ('msg' in response.data) {
+          if (response.data.msg === 'okay') {
+            this.$router.push('/AdminPanel');
+          } else {
+            this.message = 'Login failed. Please try again.';
+          }
+        } else {
+          this.message = 'Unexpected response structure. Please try again.';
+          console.error('Unexpected response structure:', response);
+        }
+      } catch (error) {
+        this.message = 'Error during login. Please try again later.';
+        console.error('Error during login:', error);
+      }
     },
   },
 };
@@ -60,55 +70,36 @@ export default {
   color: #f5ebe6;
 
 }
-
 .login-container {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: relative;
   background-image: url('https://cdn.shopify.com/s/files/1/0410/1601/files/Untitled_design_-_2021-03-01T124523.044.jpg?v=1614595536');
   background-size: cover;
   background-repeat: no-repeat;
+  color: #f5ebe6;
 }
 
-.login-form .form-group {
-  margin-bottom: 15px;
-}
-
-.login-form label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.login-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Style for the registration link */
-.router-link {
-  display: block;
+.error-message {
+  color: red;
   margin-top: 10px;
+}
+
+.forgot-register-links {
   text-align: center;
+  margin-top: 20px;
+}
+
+.router-link {
   color: #007bff;
   text-decoration: none;
+}
+
+.router-link:hover {
+  text-decoration: underline;
 }
 </style>

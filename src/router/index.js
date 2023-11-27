@@ -51,12 +51,11 @@ const routes = [
   { path: '/OrderList', component: () => import(/* webpackChunkName: "OrderList" */ '../views/OrderList.vue') },
   { path: '/BranchList', component: () => import(/* webpackChunkName: "BranchList" */ '../views/BranchList.vue') },
   { path: '/AdminPanel', component: () => import(/* webpackChunkName: "AdminPanel" */ '../views/AdminPanel.vue') },
-  { path: '/UsersList', component: () => import(/* webpackChunkName: "UsersList" */ '../views/UsersList.vue') },
+  { path: '/UsersList', component: () => import(/* webpackChunkName: "UsersList" */ '../views/UsersList.vue')},
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 });
-
 export default router;
