@@ -53,4 +53,10 @@ class UserController extends ResourceController
             }
         }
     }
+    public function getUsers(UserModel $userModel)
+    {
+        $users = $userModel->findAll();
+
+        return $this->respond(['data' => $users]);
+    }
 }

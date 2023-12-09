@@ -99,6 +99,7 @@ export default {
   data() {
     
     return {
+      isLoggedIn: false,
       drawer: false,
       drawerItems: [
         { icon: 'mdi-account', title: 'User Profile', route: { name: 'user-profile' } },

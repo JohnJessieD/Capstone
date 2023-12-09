@@ -13,7 +13,7 @@
 
           <!-- Card title with a welcoming message -->
           <v-card-title>
-            <h1>Welcome to the Malay Dynastea🍵🌿</h1>
+            <h1>Welcome to the Malay Dynastea🧋🍱</h1>
           </v-card-title>
 
           <!-- Vue Router view for rendering different components based on the route -->
@@ -72,9 +72,9 @@ export default {
 .main-container {
   background-color: #888080;
   border-radius: 10px;
-  text-align: right;
-  align-self: flex-end; 
-  background-image: url('https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/245382281_233644962130684_5227005316872638252_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFVy1qk9GdPAM2JDaX659I3oOlZRQC8stmg6VlFALyy2XjboV2KCFQtLTafyI73Vb79XSXI7wxqnOUPLkOTpCbi&_nc_ohc=zILGnZxZs1kAX_rprCU&_nc_ht=scontent.fmnl30-2.fna&oh=00_AfDHdtI1yrnk8O9475APGBy2QgFO_cOZyFuqJ00X_AXhhw&oe=65621276'); /* Replace with your actual image URL */
+  text-align: center;
+  align-self:center; 
+  background-image: url('https://image.cnbcfm.com/api/v1/image/101524695-457220551.jpg?v=1395781183&w=740&h=416&ffmt=webp&vtcrop=y'); /* Replace with your actual image URL */
   background-size: cover;
   background-repeat: no-repeat;
   color: #f5ebe6;
@@ -88,7 +88,7 @@ h1 {
 {
   margin: 0;
   padding: 0;
-  background-image: url('https://cdn.shopify.com/s/files/1/0410/1601/files/Untitled_design_-_2021-03-01T124523.044.jpg?v=1614595536');
+  background-image: url('https://1.bp.blogspot.com/-kaN7Pv8hH1I/UAujD3n__AI/AAAAAAAAH_c/EHdMdORbs1c/s1600/DSCN2126a.JPG');
   background-size: cover;
   background-repeat: no-repeat;
   height: 110vh;

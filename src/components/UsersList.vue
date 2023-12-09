@@ -1,40 +1,33 @@
-<!-- UserListComponent.vue -->
+<!-- UserList.vue -->
 <template>
   <div>
-    <h1>User List</h1>
+    <h2>User List</h2>
     <ul>
-      <li v-for="user in userList" :key="user.id">{{ user.name }}</li>
+      <li v-for="user in users" :key="user.id">{{ user.username }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 export default {
   data() {
     return {
-      userList: [],
+      users: [],
     };
   },
   mounted() {
-    // Fetch user list data on component mount
-    this.fetchUserList();
+    this.fetchUsers();
   },
   methods: {
-    fetchUserList() {
-      // Use Axios to fetch data from the API
-      axios.get('/api/userlist') // Assuming your API endpoint is '/api/userlist'
-        .then(response => {
-          this.userList = response.data.userlist;
-        })
-        .catch(error => {
-          console.error('Error fetching user list:', error);
-        });
+    async fetchUsers() {
+      try {
+        const response = await this.$axios.get('/api/users');
+        this.users = response.data;
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
     },
   },
 };
 </script>
-
-<style scoped>
-/* Add your component styles here */
-</style>

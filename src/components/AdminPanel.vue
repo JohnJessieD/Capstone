@@ -37,7 +37,7 @@
   
       <v-main>
         <v-container>
-          WOWOWOWOWOWOW
+          Ang sabi ni Mama mag-aral ako ng mabuti
           <router-view></router-view>
         </v-container>
       </v-main>
