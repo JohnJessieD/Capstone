@@ -8,6 +8,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
   },
   {
+    path: '/NavBar',
+    name: 'NavBar',
+    component: () => import(/* webpackChunkName: "NavBar" */ '../views/NavBar.vue')
+  },
+  {
+    path: '/ProductCard',
+    name: 'ProductCard',
+    component: () => import(/* webpackChunkName: "ProductCard" */ '../views/ProductCard.vue')
+  },
+  {
     path: '/',
     name: 'MainPage',
     component: () => import(/* webpackChunkName: "mainpage" */ '../views/MainPage.vue'), // Added '.vue'

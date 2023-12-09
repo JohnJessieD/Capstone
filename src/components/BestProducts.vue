@@ -1,14 +1,10 @@
 <template>
   <v-container class="page-container">
-
     <v-row class="best-products">
-      <v-col v-for="product in bestMilkTeaProducts" :key="product.id" cols="12" sm="6" md="4">
+      <v-col v-for="product in highestBoughtProducts" :key="product.product_id" cols="12" sm="6" md="4">
         <v-card class="product-card">
-         
-
           <v-card-title class="text-h6">{{ product.name }}</v-card-title>
           <v-card-subtitle>{{ product.description }}</v-card-subtitle>
-
           <v-card-actions>
             <v-btn @click="addToCart(product)" color="primary">Add to Cart</v-btn>
             <div class="product-price">$ {{ product.price }}</div>
@@ -19,46 +15,32 @@
   </v-container>
 </template>
 
-  
 <script>
+import axios from 'axios';
 
 export default {
-  
-    data() {
-      return {
-        bestMilkTeaProducts: [
-          {
-            id: 1,
-            name: 'Classic Milk Tea',
-            description: 'Our signature classic milk tea with rich flavor.',
-            price: 4.99,
-
-          },
-          {
-            id: 2,
-            name: 'Taro Milk Tea',
-            description: 'Creamy taro-flavored milk tea with tapioca pearls.',
-            price: 5.99,
-          },
-          {
-            id: 3,
-            name: 'Matcha Green Tea Latte',
-            description: 'Delicious matcha green tea latte with foamy top.',
-            price: 6.49,
-         },
-          {
-            id: 4,
-            name: 'Honeydew Milk Tea',
-            description: 'Refreshing honeydew milk tea with a twist.',
-            price: 5.49,
-
-          },
-          // Add more best milk tea products
-        ],
-      };
-    }, methods: {
+  data() {
+    return {
+      highestBoughtProducts: [],
+    };
+  },
+  mounted() {
+    // Fetch highest bought products from the server when the component is mounted
+    this.fetchHighestBoughtProducts();
+  },
+  methods: {
+    async fetchHighestBoughtProducts() {
+      try {
+        // Make an Axios request to get highest bought products
+        const response = await axios.get('/api/highest-bought-products');
+        console.log('Response from server:', response.data); // Log the response
+        this.highestBoughtProducts = response.data;
+      } catch (error) {
+        console.error('Error fetching highest bought products:', error);
+      }
+    },
     addToCart(product) {
-
+      // Implement the addToCart functionality as needed
     },
     // Other methods
   },

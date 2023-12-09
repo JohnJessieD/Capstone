@@ -1,22 +1,124 @@
 <!-- YourView.vue -->
 <template>
-  <div>
-    <login /> <!-- Using the Login component -->
-    <!-- Your view content goes here -->
-  </div>
+  <v-container class="login-container">
+    <v-row justify="center">
+      <v-col cols="12" sm="8" md="4">
+        <v-card class="login-card">
+          <v-card-title class="title headline">Login</v-card-title>
+          <v-card-text class="form">
+            <v-form @submit.prevent="login">
+              <v-text-field v-model="username" label="Username" required></v-text-field>
+              <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
+              <v-btn type="submit" block class="login-button">Login</v-btn>
+            </v-form>
+          </v-card-text>
+          <v-card-actions>
+            <router-link to="/forgot-password" class="forgot-password">Forgot Password?</router-link>
+          </v-card-actions>
+        </v-card>
+
+        <v-alert v-if="message" type="error" dismissible class="error-message">
+          {{ message }}
+        </v-alert>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import login from '@/components/login.vue';
+import axios from 'axios';
 
 export default {
-  components: {
-    login, // Registering the Login component
+  data: () => ({
+    username: '',
+    password: '',
+    message: '',
+  }),
+  methods: {
+    async login() {
+      try {
+        const response = await axios.post('/api/login', {
+          username: this.username,
+          password: this.password,
+        });
+
+        if ('msg' in response.data) {
+          if (response.data.msg === 'okay') {
+            // Check the user role and redirect accordingly
+            this.$router.push(response.data.role === 'admin' ? '/AdminPanel' : '/NavBar');
+          } else {
+            this.message = 'Login failed. Please try again.';
+          }
+        } else {
+          this.message = 'Unexpected response structure. Please try again.';
+          console.error('Unexpected response structure:', response);
+        }
+      } catch (error) {
+        this.message = 'Error during login. Please try again later.';
+        console.error('Error during login:', error);
+      }
+    },
   },
-  // Your view component logic goes here
-}
+};
 </script>
 
 <style scoped>
-/* Component-specific styles go here */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: url('https://scontent.fmnl33-1.fna.fbcdn.net/v/t39.30808-6/327326672_5807255292690652_7459428348784219467_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeFUSFRlEN9rcRiJeMrbyep2yylmKU7FgeHLKWYpTsWB4etGynPVenAIpJbW8Aih5EefjG4c-A1u6Qb3L1UTNU1z&_nc_ohc=Gyacb_VN8sIAX9-xlgU&_nc_ht=scontent.fmnl33-1.fna&oh=00_AfAgs-VuitcM-wXvtpGWYhN8lZfHVBWvCtBK4RrA-VC27A&oe=65783354') center/cover no-repeat fixed;
+  background-size: cover;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #1976D2;
+  margin-bottom: 16px;
+}
+
+.form {
+  padding: 16px;
+}
+
+.login-button {
+  margin-top: 16px;
+  background-color: #1976D2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  background-color: #1565C0;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 16px;
+  color: #757575;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.forgot-password:hover {
+  color: #333;
+}
+
+.error-message {
+  margin-top: 16px;
+}
 </style>
+
