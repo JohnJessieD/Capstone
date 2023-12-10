@@ -3,13 +3,14 @@
 namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\SalesModel;
-use App\Models\ProductModel;
 use App\Models\AuditModel;
+use App\Models\ProductModel;
 use CodeIgniter\API\ResponseTrait;
 
-class Home extends ResourceController
+
+class ProductController extends ResourceController
 {
-  use ResponseTrait;
+    use ResponseTrait;
 
     public function index()
     {
@@ -65,7 +66,7 @@ class Home extends ResourceController
     {
       $product  = new ProductModel();
       $data = $product->findAll();
-      return   $this->respond($data, 200);
+      return $this->respond($data);
     }
     public function setsales($id)
     {
@@ -116,4 +117,16 @@ class Home extends ResourceController
       //
       return $this->respond($message, 200);
     }
+
+    
+    public function getProductsCount()
+    {
+        $productModel = new ProductModel();
+        $count = $productModel->countAllResults();
+
+        return $this->respond(['count' => $count]);
+    }
+
 }
+
+

@@ -1,29 +1,70 @@
 <template>
-    <div>
-      <h1>Branch List</h1>
-      <v-data-table :items="branches" :headers="headers"></v-data-table>
-      <!-- Add buttons and forms for managing branches -->
+  <div>
+    <h1>Branches</h1>
+
+    <button @click="fetchBranches">Fetch Branches</button>
+
+    <div v-if="branches.length">
+      <h2>Branch List</h2>
+      <ul>
+        <li v-for="branch in branches" :key="branch.id">
+          {{ branch.name }} - {{ branch.address }} - {{ branch.phone }}
+        </li>
+      </ul>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'BranchListView',
-    data() {
-      return {
-        branches: [
-          { id: 1, name: 'Main Branch', location: 'City 1' },
-          { id: 2, name: 'Branch 2', location: 'City 2' },
-          // Add more branch data
-        ],
-        headers: [
-          { text: 'ID', value: 'id' },
-          { text: 'Name', value: 'name' },
-          { text: 'Location', value: 'location' },
-          // Add more headers as needed
-        ],
-      };
+
+    <h2>Create Branch</h2>
+
+    <form @submit.prevent="createBranch">
+      <label for="name">Name:</label>
+      <input v-model="newBranch.name" type="text" id="name" required />
+
+      <label for="address">Address:</label>
+      <input v-model="newBranch.address" type="text" id="address" required />
+
+      <label for="phone">Phone:</label>
+      <input v-model="newBranch.phone" type="text" id="phone" required />
+
+      <button type="submit">Create Branch</button>
+    </form>
+  </div>
+</template>
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      branches: [],
+      newBranch: {
+        name: '',
+        address: '',
+        phone: '',
+      },
+    };
+  },
+  methods: {
+    async fetchBranches() {
+      try {
+        const response = await axios.get('/api/branch');
+        this.branches = response.data;
+      } catch (error) {
+        console.error('Error fetching branches:', this.getErrorMessage(error));
+      }
     },
-  };
-  </script>
-  
+    async createBranch() {
+      try {
+        await axios.post('/api/create', this.newBranch);
+        console.log('Branch created successfully');
+        this.fetchBranches(); // Refresh the branch list after creating a new branch
+      } catch (error) {
+        console.error('Error creating branch:', this.getErrorMessage(error));
+      }
+    },
+    getErrorMessage(error) {
+      // Extract error message from the error object
+      return error.response ? error.response.data : error.message;
+    },
+  },
+};
+</script>

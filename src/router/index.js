@@ -28,14 +28,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/login.vue')
+    path: '/Login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
   {
     path: '/register',
     name: 'register',
     component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
+  },{
+    path: '/ProductView_old',
+    name: 'ProductView_old',
+    component: () => import(/* webpackChunkName: "ProductView_old" */ '../views/ProductView_old.vue')
   },
   {
     path: '/Shopping-cart',
@@ -48,6 +52,10 @@ const routes = [
     component: () => import(/* webpackChunkName: "UserProfile" */ '../views/UserProfile.vue') // Added '.vue'
   },
   {
+     path: '/history/:upc', name: 'history',  
+    component: () => import(/* webpackChunkName: "HistoryPage" */ '../views/HistoryPage.vue') // Added '.vue'
+  },
+  {
     path: '/OrderHistory',
     name: 'OrderHistory',
     component: () => import(/* webpackChunkName: "OrderHistory" */ '../views/OrderHistory.vue') // Added '.vue'
@@ -57,7 +65,6 @@ const routes = [
     name: 'BestProducts',
     component: () => import(/* webpackChunkName: "BestProducts" */ '../views/BestProducts.vue') // Added '.vue'
   },
-  { path: '/ProductList', component: () => import(/* webpackChunkName: "ProductList" */ '../views/ProductList.vue') },
   { path: '/OrderList', component: () => import(/* webpackChunkName: "OrderList" */ '../views/OrderList.vue') },
   { path: '/BranchList', component: () => import(/* webpackChunkName: "BranchList" */ '../views/BranchList.vue') },
   { path: '/AdminPanel', component: () => import(/* webpackChunkName: "AdminPanel" */ '../views/AdminPanel.vue') },

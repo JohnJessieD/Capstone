@@ -26,6 +26,8 @@
           <router-link to="/HomeView" style="text-decoration: none; color: inherit;">
             Malay Dynastea
           </router-link>
+
+          
         </v-toolbar-title>
         <v-spacer></v-spacer>
   
@@ -51,11 +53,10 @@
         drawer: false,
         drawerItems: [
           { icon: 'mdi-account-circle', title: 'Users', route: { name: 'UsersList' } },
-          { icon: 'mdi-format-list-bulleted', title: 'OrderList', route: { name: 'OrderList' } },
-          { icon: 'mdi-shopping', title: 'ProductList', route: { name: 'ProductList' } },
+          { icon: 'mdi-shopping', title: 'ProductList', route: { name: 'ProductView_old' } },
           { icon: 'mdi-store', title: 'BranchList', route: { name: 'BranchList' } },
         ],
-      };
+      };  
     },
     methods: {
       // Add a method for logout

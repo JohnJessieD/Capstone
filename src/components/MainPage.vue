@@ -58,7 +58,7 @@ export default {
   methods: {
     showLoginForm() {
       this.showForm = true;
-      this.$router.push('/login');
+      this.$router.push('/Login');
     },
     showRegisterForm() {
       this.showForm = true;
