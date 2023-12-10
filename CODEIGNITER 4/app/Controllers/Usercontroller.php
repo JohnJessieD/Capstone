@@ -103,5 +103,5 @@ class Usercontroller extends ResourceController
         $count = $userModel->countAllResults();
 
         return $this->respond(['count' => $count]);
-    }
+    }   
 }
