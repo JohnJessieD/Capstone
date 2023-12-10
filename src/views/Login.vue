@@ -65,13 +65,13 @@ export default {
 <style scoped>
 .login-container {
   height: 100vh;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('https://scontent.fmnl33-1.fna.fbcdn.net/v/t39.30808-6/327326672_5807255292690652_7459428348784219467_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeFUSFRlEN9rcRiJeMrbyep2yylmKU7FgeHLKWYpTsWB4etGynPVenAIpJbW8Aih5EefjG4c-A1u6Qb3L1UTNU1z&_nc_ohc=Gyacb_VN8sIAX9-xlgU&_nc_ht=scontent.fmnl33-1.fna&oh=00_AfAgs-VuitcM-wXvtpGWYhN8lZfHVBWvCtBK4RrA-VC27A&oe=65783354') center/cover no-repeat fixed;
-  background-size: cover;
+  background: url('');
+  background-size: 100%;
+  background-color: #96B6C5;
 }
 
 .login-card {

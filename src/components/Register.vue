@@ -9,7 +9,7 @@
             <v-text-field v-model="passwordConfirm" label="Password Confirm" type="password" required></v-text-field>
             <div v-if="message === 'passwordMismatch'">Passwords do not match</div>
             <div v-if="message === 'registrationFailed'">Registration failed. Please try again.</div>
-            <v-btn type="submit" block class="mt-2">Submit</v-btn>
+            <v-btn type="submit" block class="mt-2" color="blue">Submit</v-btn>
           </v-form>
         </v-sheet>
       </div>
@@ -60,25 +60,29 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 600px;
-  padding: 20px; /* Adjust padding as needed */
-  background-image: url('https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/245382281_233644962130684_5227005316872638252_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFVy1qk9GdPAM2JDaX659I3oOlZRQC8stmg6VlFALyy2XjboV2KCFQtLTafyI73Vb79XSXI7wxqnOUPLkOTpCbi&_nc_ohc=zILGnZxZs1kAX_rprCU&_nc_ht=scontent.fmnl30-2.fna&oh=00_AfDHdtI1yrnk8O9475APGBy2QgFO_cOZyFuqJ00X_AXhhw&oe=65621276'); /* Replace with your actual image URL */
+  padding: 600px; /* Adjust padding as needed */
+  background-image: url('https://scontent.fmnl30-3.fna.fbcdn.net/v/t39.30808-6/357452804_649096310600190_6371272320415800534_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeG3OKITm-0IQHr9Td2VBL03bJXf7pBe-aFsld_ukF75oX1SXpZ8v-A2-PvPuBQNrRUxWjs6sJdSbQ_HQmcbahp5&_nc_ohc=at6gd7eo2hgAX8DvjtA&_nc_ht=scontent.fmnl30-3.fna&oh=00_AfALgn2QqLZryVI8wiVMGtvKe8XRBaimjDFWO8MQ0DG8LA&oe=657B4CA5'); /* Replace with your actual image URL */
   background-size: cover;
   background-repeat: no-repeat;
-  color: #f5ebe6;
+  background-position: center bottom; /* Adjusted to lower the background */
+  color: #51afdb;
+  min-height: 20vh; /* Adjusted to 20vh for demonstration */
+  width: 100%;
 }
 
-.login-container {
+.container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-image: url('https://cdn.shopify.com/s/files/1/0410/1601/files/Untitled_design_-_2021-03-01T124523.044.jpg?v=1614595536');
+  min-height: 600px;
+  padding: 20px; /* Adjust padding as needed */
+  background-image: url('https://scontent.fmnl30-3.fna.fbcdn.net/v/t39.30808-6/357452804_649096310600190_6371272320415800534_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeG3OKITm-0IQHr9Td2VBL03bJXf7pBe-aFsld_ukF75oX1SXpZ8v-A2-PvPuBQNrRUxWjs6sJdSbQ_HQmcbahp5&_nc_ohc=at6gd7eo2hgAX8DvjtA&_nc_ht=scontent.fmnl30-3.fna&oh=00_AfALgn2QqLZryVI8wiVMGtvKe8XRBaimjDFWO8MQ0DG8LA&oe=657B4CA5'); /* Replace with your actual image URL */
   background-size: cover;
   background-repeat: no-repeat;
-  color: #f5ebe6;
+  background-position: center top; /* Adjusted to bring the background upwards */
+  color: #51afdb;
+  min-height: 20vh; /* Adjusted to 20vh for demonstration */
+  width: 100%;
 }
 
 .v-text-field {

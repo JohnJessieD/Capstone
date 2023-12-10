@@ -13,7 +13,11 @@
 
           <!-- Card title with a welcoming message -->
           <v-card-title>
-            <h1>Welcome to the Malay Dynastea🧋🍱</h1>
+            <h1  style="color: white; text-shadow: 1px 1px 1px black;  font-family: 'Times New Roman', Times, serif;">Welcome to</h1>
+            <h2 style="color: white; text-shadow: 1px 1px 1px black; font-family: 'Times New Roman', Times, serif; font-size: 36px;">
+  Malay Dynas<span style="color: green; text-shadow: 1px 1px 1px black; font-family: 'Times New Roman', Times, serif; ">Tea</span>🧋🍃
+</h2>
+
           </v-card-title>
 
           <!-- Vue Router view for rendering different components based on the route -->
@@ -27,16 +31,17 @@
               
 
               <!-- Add more content about featured products, promotions, or any other important information -->
-              <p>Discover a world of exquisite teas and accessories to elevate your tea experience.</p>
+              <p style="font-size: 18px; text-shadow: 1px 1px 1px whitesmoke; color: black; font-family: 'Times New Roman', Times, serif;">
+  Discover a world of exquisite teas and accessories to elevate your tea experience.
+  </p>
+
+
 
               <!-- Additional sections or features can be added here -->
 
               <!-- Social media links or any external links for updates and offers -->
-              <p>
-    Check out our <a href="https://www.facebook.com/malaydynastea">Facebook page</a> for more updates and special offers.
-    Follow us on <a href="https://www.instagram.com/malaydynastea">Instagram</a> for beautiful tea moments.
-    Connect with us on <a href="https://twitter.com/malaydynastea">Twitter</a> for the latest news and events.
-  </p>
+              <p style="font-size: 18px; text-shadow: 1px 1px 1px whitesmoke; color: black; font-family: 'Times New Roman', Times, serif;">
+    Check out our 👉🏻<a href="https://www.facebook.com/malaydynastea">Facebook</a>👈🏻 page for more updates and special offers.</p>
               <!-- Call-to-action buttons for user interaction -->
               <v-btn @click="showLoginForm" color="success">Login</v-btn>
               <v-btn @click="showRegisterForm" color="primary">Register</v-btn>
@@ -70,16 +75,22 @@ export default {
 
 <style scoped>
 .main-container {
-  background-color: #888080;
+  background: linear-gradient(rgba(190, 173, 250, 0.7), rgba(190, 173, 250, 0.7)), #96B6C5;
   border-radius: 10px;
   text-align: center;
-  align-self:center; 
-  background-image: url('https://image.cnbcfm.com/api/v1/image/101524695-457220551.jpg?v=1395781183&w=740&h=416&ffmt=webp&vtcrop=y'); /* Replace with your actual image URL */
-  background-size: cover;
+  align-self: center;
+  border: 1px solid #374259;
+  background-image: url('https://wallpapers.com/images/high/light-color-background-1eq9mtpjqjz9ddep.webp'); /* Replace with your actual image URL */
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   color: #f5ebe6;
-  min-height: 158%;
+  min-height: 20vh; /* Adjusted to 20vh for demonstration */
+  width: 100%;
+  margin-top: 45vh; /* Adjust the top margin as needed */
 }
+
+
 
 h1 {
   color: #fff;
@@ -88,16 +99,17 @@ h1 {
 {
   margin: 0;
   padding: 0;
-  background-image: url('https://1.bp.blogspot.com/-kaN7Pv8hH1I/UAujD3n__AI/AAAAAAAAH_c/EHdMdORbs1c/s1600/DSCN2126a.JPG');
-  background-size: cover;
+  background-image: url('https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/292847367_552151036557059_2547609809036160958_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeGsksjpA05NluuDr372_8Kn8Dyg_tBUdZHwPKD-0FR1kXbJ7twjDTkZWSLX3A-zgkccPV7QXtqS_MhLjKeA4qRG&_nc_ohc=BA4tIR_R_AsAX9vUoiW&_nc_ht=scontent.fmnl30-2.fna&oh=00_AfB1iGFo8xP459B3MAZMw0XW8SkKE4Y2OgC1ZBYn4WMLgA&oe=657B868B');
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
 } 
 .v-btn {
-  margin: 10px;
+  margin: 13px;
 }
 .social-links {
   display: flex;
