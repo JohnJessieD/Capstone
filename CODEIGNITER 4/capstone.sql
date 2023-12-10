@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 27, 2023 at 11:31 PM
+-- Generation Time: Dec 10, 2023 at 10:34 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -24,6 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `audit`
+--
+
+CREATE TABLE `audit` (
+  `id` int NOT NULL,
+  `productID` text NOT NULL,
+  `oldQuantity` text NOT NULL,
+  `quantity` text NOT NULL,
+  `type` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `productlist`
 --
 
@@ -33,6 +48,31 @@ CREATE TABLE `productlist` (
   `ProductPrice` text NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int NOT NULL,
+  `upc` text NOT NULL,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `quantity` text NOT NULL,
+  `price` text NOT NULL,
+  `cateogry` text NOT NULL,
+  `status` text NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `upc`, `name`, `description`, `quantity`, `price`, `cateogry`, `status`, `created_at`) VALUES
+(1, '10002', 'coke', 'coca cola 1.5ltrs', '120', '63', 'drinks', 'n/a', '2023-12-02 12:18:38');
 
 -- --------------------------------------------------------
 
@@ -52,6 +92,22 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 (1, 'admin'),
 (2, 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales`
+--
+
+CREATE TABLE `sales` (
+  `id` int NOT NULL,
+  `orderID` text NOT NULL,
+  `productID` text NOT NULL,
+  `price` text NOT NULL,
+  `quantity` text NOT NULL,
+  `status` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -117,7 +173,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `token`, `status`, `role`, `c
 (8, '123', '$2y$10$./tWikgmZ3HJV/phAAPHR.AgcoIfmS3HrLvlQDkfIfAl8eUvYdsDW', 'NcJhoOXjU8Dz3MtI42qnGKsCxeQAwfuv1abRpklHWm7T9i0yLE', 'active', 'admin', '0000-00-00 00:00:00'),
 (9, '1', '$2y$10$5xrDKLWcjXVCHJ362Qz2Ru8GPo4gp8dbNoW1HPlKCqgGs2C.Nepwy', '8C1bAiqxLZPjtkMhwgIHolv3UsamXVK6n2F9YE5ry70DRTuzOc', 'active', 'admin', '0000-00-00 00:00:00'),
 (10, '123', '$2y$10$X4.tdKrFLVMESWc.M6Z77eUUS1WIfJh.vH8DGNvLMwk2a6Rvc1Uoi', 'ATW357CDjMLRf9gHy8rbIS1JeEdNsUwkoaVKY2vXGFQmOxpPZz', 'active', 'user', '0000-00-00 00:00:00'),
-(11, '123', '$2y$10$kTR5tk5GlIyAY4eQzBGy9eH2E2YZOHEB0FLvMghambYawZLM3KCPW', '50Wzl4DxXnJRwMOqjQAmYfahN7sdy6eiZBCuLHkrKo3EF1UITv', 'active', 'user', '0000-00-00 00:00:00');
+(11, '123', '$2y$10$kTR5tk5GlIyAY4eQzBGy9eH2E2YZOHEB0FLvMghambYawZLM3KCPW', '50Wzl4DxXnJRwMOqjQAmYfahN7sdy6eiZBCuLHkrKo3EF1UITv', 'active', 'user', '0000-00-00 00:00:00'),
+(12, '123', '$2y$10$.2ZD.qgHyEcLsQehLCTkW.u/ENQJXvt0jPb1ltJD/Wsw3rjlKXRUC', 'eZbzwHGcVA069SKhd4jmifpsIgL8nakUNC5FPQJ2lROE7Xr3Yu', 'active', 'user', '0000-00-00 00:00:00'),
+(13, '121', '$2y$10$kPa8I02cpCJ9MqrVrcx/nOQIFYfFekQa7SFzR8jwBXQDLgPB.kiN2', 'diuy3DgzLN1kpmtwIfeahKXrqbSM0GO46nTFJ9ocl87xvYCUWZ', 'active', 'user', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -168,7 +226,7 @@ ALTER TABLE `userlist`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
