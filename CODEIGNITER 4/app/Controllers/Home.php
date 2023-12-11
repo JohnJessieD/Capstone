@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\SalesModel;
 use App\Models\ProductModel;

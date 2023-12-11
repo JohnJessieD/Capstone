@@ -53,36 +53,24 @@ export default {
     }
   }
 };
-</script>
-<style scoped>
+</script><style scoped>
 .container {
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 600px;
-  padding: 600px; /* Adjust padding as needed */
-  background-image: url('https://scontent.fmnl30-3.fna.fbcdn.net/v/t39.30808-6/357452804_649096310600190_6371272320415800534_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeG3OKITm-0IQHr9Td2VBL03bJXf7pBe-aFsld_ukF75oX1SXpZ8v-A2-PvPuBQNrRUxWjs6sJdSbQ_HQmcbahp5&_nc_ohc=at6gd7eo2hgAX8DvjtA&_nc_ht=scontent.fmnl30-3.fna&oh=00_AfALgn2QqLZryVI8wiVMGtvKe8XRBaimjDFWO8MQ0DG8LA&oe=657B4CA5'); /* Replace with your actual image URL */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom; /* Adjusted to lower the background */
-  color: #51afdb;
-  min-height: 20vh; /* Adjusted to 20vh for demonstration */
-  width: 100%;
+  justify-content: center;  
+  background: url('');
+  background-size: 100%;
+  background-color: #96B6C5;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 600px;
-  padding: 20px; /* Adjust padding as needed */
-  background-image: url('https://scontent.fmnl30-3.fna.fbcdn.net/v/t39.30808-6/357452804_649096310600190_6371272320415800534_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeG3OKITm-0IQHr9Td2VBL03bJXf7pBe-aFsld_ukF75oX1SXpZ8v-A2-PvPuBQNrRUxWjs6sJdSbQ_HQmcbahp5&_nc_ohc=at6gd7eo2hgAX8DvjtA&_nc_ht=scontent.fmnl30-3.fna&oh=00_AfALgn2QqLZryVI8wiVMGtvKe8XRBaimjDFWO8MQ0DG8LA&oe=657B4CA5'); /* Replace with your actual image URL */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top; /* Adjusted to bring the background upwards */
-  color: #51afdb;
-  min-height: 20vh; /* Adjusted to 20vh for demonstration */
+.login-container {
+  max-width: 400px; /* Adjust the maximum width as needed */
   width: 100%;
+  padding: 20px;
+  background-color: #fff; /* Set the background color as needed */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
 .v-text-field {

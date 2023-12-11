@@ -4,6 +4,8 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\SalesModel;
 use App\Models\AuditModel;
+use App\Controllers\BaseController;
+use App\Models\OrderProductModel;
 use App\Models\ProductModel;
 use CodeIgniter\API\ResponseTrait;
 
@@ -62,12 +64,7 @@ class ProductController extends ResourceController
       }
 
     }
-    public function getProducts()
-    {
-      $product  = new ProductModel();
-      $data = $product->findAll();
-      return $this->respond($data);
-    }
+
     public function setsales($id)
     {
       $sales =new SalesModel();
@@ -127,6 +124,29 @@ class ProductController extends ResourceController
         return $this->respond(['count' => $count]);
     }
 
+    public function Products()
+    {
+      $model = new ProductModel();
+      $products = $model->findAll();
+
+      return $this->respond($products);
+    }
+        
+    public function getCategories()
+    {
+        $productModel = new ProductModel();
+        $data['categories'] = $productModel->distinct('category')->findAll();
+        return $this->respond($data);
+    }
+    
+    public function submitOrder()
+    {
+        $orderModel = new OrderModel();
+        $data = $this->request->getJSON();
+        $orderModel->insert($data);
+        return $this->respondCreated(['message' => 'Order submitted successfully']);
+    }
+    
 }
 
 

@@ -5,7 +5,7 @@ use CodeIgniter\RESTful\ResourceController;
 use App\Models\BranchModel;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Controller;
-
+use App\Controllers\BaseController;
 class BranchController extends ResourceController
 {
     use ResponseTrait;

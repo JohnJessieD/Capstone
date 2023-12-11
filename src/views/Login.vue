@@ -15,11 +15,13 @@
           <v-card-actions>
             <router-link to="/forgot-password" class="forgot-password">Forgot Password?</router-link>
           </v-card-actions>
+          <v-card-actions>
+            <v-btn @click="goToRegistration" text class="register-link">Don't have an account? Register here</v-btn>
+          </v-card-actions>
+          <v-alert v-if="message" type="error" dismissible class="error-message">
+            {{ message }}
+          </v-alert>
         </v-card>
-
-        <v-alert v-if="message" type="error" dismissible class="error-message">
-          {{ message }}
-        </v-alert>
       </v-col>
     </v-row>
   </v-container>
@@ -57,6 +59,10 @@ export default {
         this.message = 'Error during login. Please try again later.';
         console.error('Error during login:', error);
       }
+    },
+    goToRegistration() {
+      // Redirect to the registration page
+      this.$router.push('/register');
     },
   },
 };
@@ -117,8 +123,19 @@ export default {
   color: #333;
 }
 
+.register-link {
+  text-align: center;
+  margin-top: 16px;
+  color: #757575;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.register-link:hover {
+  color: #333;
+}
+
 .error-message {
   margin-top: 16px;
 }
 </style>
-
