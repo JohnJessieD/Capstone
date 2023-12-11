@@ -1,32 +1,32 @@
-<!-- YourView.vue -->
 <template>
-  <v-container class="login-container">
-    <v-row justify="center">
-      <v-col cols="12" sm="8" md="4">
-        <v-card class="login-card">
-          <v-card-title class="title headline">Login</v-card-title>
-          <v-card-text class="form">
-            <v-form @submit.prevent="login">
-              <v-text-field v-model="username" label="Username" required></v-text-field>
-              <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
-              <v-btn type="submit" block class="login-button">Login</v-btn>
-            </v-form>
-          </v-card-text>
-          <v-card-actions>
-            <router-link to="/forgot-password" class="forgot-password">Forgot Password?</router-link>
-          </v-card-actions>
-          <v-card-actions>
-            <v-btn @click="goToRegistration" text class="register-link">Don't have an account? Register here</v-btn>
-          </v-card-actions>
-          <v-alert v-if="message" type="error" dismissible class="error-message">
-            {{ message }}
-          </v-alert>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-app>
+    <v-container class="login-container" fluid fill-height>
+      <v-row justify="center" align="center">
+        <v-col cols="12" sm="8" md="4">
+          <v-card class="login-card">
+            <v-card-title class="title headline">Login</v-card-title>
+            <v-card-text class="form">
+              <v-form @submit.prevent="login">
+                <v-text-field v-model="username" label="Username" required></v-text-field>
+                <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
+                <v-btn type="submit" block class="login-button">Login</v-btn>
+              </v-form>
+            </v-card-text>
+            <v-card-actions>
+              <router-link to="/forgot-password" class="forgot-password">Forgot Password?</router-link>
+            </v-card-actions>
+            <v-card-actions>
+              <router-link to="/register" class="register-link">Don't have an account? Register here</router-link>
+            </v-card-actions>
+            <v-alert v-if="message" type="error" dismissible class="error-message">
+              {{ message }}
+            </v-alert>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
-
 <script>
 import axios from 'axios';
 
@@ -60,22 +60,22 @@ export default {
         console.error('Error during login:', error);
       }
     },
-    goToRegistration() {
-      // Redirect to the registration page
-      this.$router.push('/register');
-    },
   },
 };
 </script>
 
 <style scoped>
+.v-app {
+      background-size: 100%;
+      background-color: #96B6C5;
+    }
+
 .login-container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('');
   background-size: 100%;
   background-color: #96B6C5;
 }
@@ -87,6 +87,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #095d85;
 }
 
 .title {

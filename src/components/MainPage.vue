@@ -79,8 +79,7 @@ export default {
   border-radius: 10px;
   text-align: center;
   align-self: center;
-  border: 1px solid #374259;
-  background-image: url('https://wallpapers.com/images/high/light-color-background-1eq9mtpjqjz9ddep.webp'); /* Replace with your actual image URL */
+  background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your actual image URL */
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -88,6 +87,8 @@ export default {
   min-height: 20vh; /* Adjusted to 20vh for demonstration */
   width: 100%;
   margin-top: 45vh; /* Adjust the top margin as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 
