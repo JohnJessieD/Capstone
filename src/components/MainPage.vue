@@ -15,7 +15,7 @@
           <v-card-title>
             <h1  style="color: white; text-shadow: 1px 1px 1px black;  font-family: 'Times New Roman', Times, serif;">Welcome to</h1>
             <h2 style="color: white; text-shadow: 1px 1px 1px black; font-family: 'Times New Roman', Times, serif; font-size: 36px;">
-  Malay Dynas<span style="color: green; text-shadow: 1px 1px 1px black; font-family: 'Times New Roman', Times, serif; ">Tea</span>🧋🍃
+  Malay Dynas<span style="color: green; text-shadow: 1px 1px 1px black; font-family: 'Pacifico', cursive; ">Tea</span>🧋🍃
 </h2>
 
           </v-card-title>
