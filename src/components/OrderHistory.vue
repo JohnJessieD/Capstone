@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -24,8 +26,8 @@ export default {
   methods: {
     async fetchOrders() {
       try {
-        // Make sure to replace 'http://your-backend-url/' with the actual URL of your CodeIgniter backend
-        const response = await this.$axios.get('http://your-backend-url/api/orders');
+        // Replace 'http://your-backend-url/' with the actual URL of your CodeIgniter backend
+        const response = await axios.get('/api/orders');
         this.orders = response.data;
       } catch (error) {
         console.error('Error fetching orders', error);

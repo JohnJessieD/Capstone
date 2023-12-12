@@ -1,7 +1,10 @@
 <?php
-namespace App\Controllers\Api;
-use App\Controllers\BaseController;
+
+namespace App\Controllers;
+
+use App\Models\ProductModel;
 use App\Models\OrderModel;
+use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 
@@ -9,31 +12,61 @@ class OrderController extends ResourceController
 {
     use ResponseTrait;
 
-    public function addOrder()
+    public function index()
     {
-        $data = $this->request->getJSON();
-        $productId = $data->product_id;
+        // Load the OrderModel
+        $OrderModel = new OrderModel();
 
-        // Assuming you have a ProductModel
-        $productModel = new \App\Models\ProductModel();
-        $product = $productModel->find($productId);
+        // Retrieve all order products
+        $data['orderProducts'] = $OrderModel->findAll();
 
-        if ($product) {
-            // Assuming you have an OrderModel
-            $orderModel = new OrderModel();
-            $orderData = [
-                'product_id' => $product['id'],
-                'quantity'   => 1, // You may adjust the quantity as needed
-                // Add other order-related fields as needed
-            ];
-            $orderModel->insert($orderData);
+        // Respond with the order products data
+        return $this->respond($data['orderProducts']);
+    }
 
-            // You may also update the product status or do other necessary actions
-            // For example: $productModel->update($productId, ['status' => 'ordered']);
+    public function orders()
+    {
+        // Retrieve orders from the database and return them as JSON
+        $orders = $this->OrderModel->table('orders')->get()->getResult();
+        return $this->respond($orders);
+    }
 
-            return $this->respond(['message' => 'Order added successfully'], 200);
+
+    public function submitOrder()
+    {
+        $data = $this->request->getJSON(true);
+
+        // Assuming you have a model named OrderModel
+        $OrderModel = new OrderModel();
+        $OrderModel->insert($data);
+
+        return $this->respondCreated(['message' => 'Order submitted successfully']);
+    }
+
+    public function search()
+    {
+        $request = $this->request->getJSON();
+        $searchQuery = $request->searchQuery;
+
+        // Validate the search query if needed
+
+        $model = new ProductModel();
+
+        // Assuming you have a 'products' table with a 'name' column
+        $result = $model->like('name', $searchQuery)->findAll();
+
+        return $this->respond($result, 200);
+    }
+
+    public function highestBoughtProduct()
+    {
+        $orderModel = new OrderModel();
+        $highestBoughtProduct = $orderModel->getHighestBoughtProduct();
+
+        if ($highestBoughtProduct) {
+            return $this->respond($highestBoughtProduct, Response::HTTP_OK);
         } else {
-            return $this->failNotFound('Product not found');
+            return $this->failNotFound('No highest bought product found.');
         }
     }
 }

@@ -1,7 +1,10 @@
 <template>
   <v-container class="page-container">
     <v-row class="best-products">
-      <v-col v-for="product in highestBoughtProducts" :key="product.product_id" cols="12" sm="6" md="4">
+      <v-col v-if="loading" cols="12" class="text-center">
+        <v-progress-circular indeterminate color="primary"></v-progress-circular>
+      </v-col>
+      <v-col v-else v-for="product in highestBoughtProduct" :key="product.product_id" cols="12" sm="6" md="4">
         <v-card class="product-card">
           <v-card-title class="text-h6">{{ product.name }}</v-card-title>
           <v-card-subtitle>{{ product.description }}</v-card-subtitle>
@@ -10,6 +13,11 @@
             <div class="product-price">$ {{ product.price }}</div>
           </v-card-actions>
         </v-card>
+      </v-col>
+    </v-row>
+    <v-row v-if="error" cols="12" class="text-center">
+      <v-col>
+        <div class="red--text">{{ error }}</div>
       </v-col>
     </v-row>
   </v-container>
@@ -21,22 +29,25 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      highestBoughtProducts: [],
+      highestBoughtProduct: [],
+      loading: false,
+      error: null,
     };
   },
   mounted() {
-    // Fetch highest bought products from the server when the component is mounted
-    this.fetchHighestBoughtProducts();
+    this.fetchHighestBoughtProducts(); // Fixed method name here
   },
   methods: {
     async fetchHighestBoughtProducts() {
       try {
-        // Make an Axios request to get highest bought products
-        const response = await axios.get('/api/highest-bought-products');
-        console.log('Response from server:', response.data); // Log the response
-        this.highestBoughtProducts = response.data;
+        this.loading = true;
+        const response = await axios.get('/api/highest-bought-product'); // Fixed endpoint name here
+        this.highestBoughtProduct = response.data;
       } catch (error) {
-        console.error('Error fetching highest bought products:', error);
+        console.error('Error fetching highest bought product:', error);
+        this.error = 'Failed to fetch highest bought product.';
+      } finally {
+        this.loading = false;
       }
     },
     addToCart(product) {

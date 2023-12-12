@@ -1,0 +1,168 @@
+CRITICAL - 2023-12-12 03:43:34 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\OrderController.php(23): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->addOrder()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 03:44:17 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\OrderController.php(23): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->addOrder()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 03:44:44 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\OrderController.php(23): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->addOrder()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 03:46:41 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\Home.php(25): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addOrder()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 03:46:42 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\Home.php(25): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addOrder()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 03:46:43 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\Home.php(25): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addOrder()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:12:22 --> Call to undefined method App\Controllers\OrderController::fetchProductDetails()
+in APPPATH\Controllers\OrderController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->makeOrder()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:13:50 --> Call to undefined method App\Controllers\OrderController::fetchProductDetails()
+in APPPATH\Controllers\OrderController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->makeOrder()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:13:57 --> Call to undefined method App\Controllers\OrderController::fetchProductDetails()
+in APPPATH\Controllers\OrderController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->makeOrder()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:13:59 --> Call to undefined method App\Controllers\OrderController::fetchProductDetails()
+in APPPATH\Controllers\OrderController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->makeOrder()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:15:06 --> App\Controllers\OrderController::fetchProductDetails(): Argument #1 ($productId) must be of type int, null given, called in C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\OrderController.php on line 19
+in APPPATH\Controllers\OrderController.php on line 51.
+ 1 APPPATH\Controllers\OrderController.php(19): App\Controllers\OrderController->fetchProductDetails(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->makeOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:15:22 --> App\Controllers\OrderController::fetchProductDetails(): Argument #1 ($productId) must be of type int, null given, called in C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\OrderController.php on line 19
+in APPPATH\Controllers\OrderController.php on line 51.
+ 1 APPPATH\Controllers\OrderController.php(19): App\Controllers\OrderController->fetchProductDetails(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->makeOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:33:38 --> Undefined property: App\Controllers\OrderController::$db
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$db', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:33:40 --> Undefined property: App\Controllers\OrderController::$db
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$db', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:34:56 --> Undefined property: App\Controllers\OrderController::$OrderModel
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$OrderModel', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:34:59 --> Undefined property: App\Controllers\OrderController::$OrderModel
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$OrderModel', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:43:24 --> Undefined property: App\Controllers\OrderController::$OrderModel
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$OrderModel', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:48:48 --> Call to undefined method App\Models\OrderModel::getHighestBoughtProduct
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\OrderController.php(64): CodeIgniter\Model->__call('getHighestBoughtProduct', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->highestBoughtProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:48:51 --> Call to undefined method App\Models\OrderModel::getHighestBoughtProduct
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\OrderController.php(64): CodeIgniter\Model->__call('getHighestBoughtProduct', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->highestBoughtProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-12 04:49:26 --> Call to undefined method App\Models\OrderModel::getHighestBoughtProduct
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\OrderController.php(64): CodeIgniter\Model->__call('getHighestBoughtProduct', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->highestBoughtProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
