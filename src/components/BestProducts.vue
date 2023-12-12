@@ -35,10 +35,10 @@ export default {
     };
   },
   mounted() {
-    this.fetchHighestBoughtProducts(); // Fixed method name here
+    this.fetchHighestBoughtProduct(); // Fixed method name here
   },
   methods: {
-    async fetchHighestBoughtProducts() {
+    async fetchHighestBoughtProduct() { // Fixed method name here
       try {
         this.loading = true;
         const response = await axios.get('/api/highest-bought-product'); // Fixed endpoint name here

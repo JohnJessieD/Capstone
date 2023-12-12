@@ -19,8 +19,7 @@ $routes->match(['get', 'post'], '/api/newproduct', 'Home::newproduct');
 $routes->put('api/updateproduct/(:num)', 'Home::updateProduct/$1');
 $routes->get( '/api/products', 'ProductController::Products');
 $routes->post('/api/submitOrder', 'OrderController::submitOrder');
-
-$routes->get('/api/highest-bought-products', 'OrderController::highestBoughtProduct');
+$routes->get('/api/highest-bought-product', 'OrderController::highestBoughtProduct');
 $routes->get('/api/orders', 'OrderController::orders');
 
 //$routes->post('api/addOrder', 'OrderController::addOrder');

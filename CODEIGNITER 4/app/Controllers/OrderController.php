@@ -68,5 +68,5 @@ class OrderController extends ResourceController
         } else {
             return $this->failNotFound('No highest bought product found.');
         }
-    }
+    }   
 }

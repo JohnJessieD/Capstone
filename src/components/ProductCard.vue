@@ -1,29 +1,23 @@
 <template>
   <v-main>
     <v-container>
+      <div>
+        <label for="orderDirection">Pricing:</label>
+        <select id="orderDirection" v-model="orderDirection" @change="fetchProducts">
+          <option value="asc">Highest- Lowest </option>
+          <option value="desc">Lowest-Highest</option>
+        </select>
+        <!-- Input for custom order -->
+        <input v-if="orderBy === 'custom'" type="text" v-model="customOrder" placeholder="Enter custom order">
+      </div>
       <v-row>
-        <v-col v-for="product in products" :key="product.id" cols="12" md="4">
+        <v-col v-for="product in sortedProducts" :key="product.id" cols="12" md="4">
           <v-card class="pa-3 mb-4">
             <v-img :src="product.image" :alt="product.name" class="mb-3"></v-img>
             <v-card-title class="headline">{{ product.name }}</v-card-title>
             <v-card-text>{{ product.description }}</v-card-text>
             <v-card-subtitle class="mb-2">$ {{ product.price }}</v-card-subtitle>
             <v-btn @click="openProductModal(product)" color="primary">Add to Cart</v-btn>
-          </v-card>
-        </v-col>
-      </v-row>
-
-      <v-row>
-        <v-col>
-          <v-card class="pa-3">
-            <h2>Categories</h2>
-            <v-list>
-              <v-list-item v-for="category in categories" :key="category.id">
-                <v-list-item-content @click="filterProducts(category)">
-                  <v-list-item-title>{{ category.name }}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list>
           </v-card>
         </v-col>
       </v-row>
@@ -36,7 +30,7 @@
           <h3>{{ selectedProduct.name }}</h3>
           <p>{{ selectedProduct.description }}</p>
           <div>Price: $ {{ selectedProduct.price }}</div>
-          <v-text-field v-model="quantity" label="Quantity" type="number" min="1"></v-text-field>
+          <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
           <v-text-field v-model="total_amount" label="Total" type="number" min="1" :readonly="true"></v-text-field>
           <v-text-field v-model="customer_name" label="Customer Name" :readonly="true"></v-text-field>
         </v-card-text>
@@ -63,7 +57,27 @@ export default {
       quantity: 1,
       total_amount: 0,
       orders: [],
+      orderBy: 'name', // Add orderBy for sorting
+      orderDirection: 'asc', // Add orderDirection for sorting
+      customOrder: '', // Add customOrder for custom sorting
     };
+  },
+  computed: {
+    sortedProducts() {
+      if (this.orderBy === 'custom') {
+        // Custom order logic
+        const customOrderArray = this.customOrder.split(',');
+        return this.products.slice().sort((a, b) => {
+          // Your custom sorting logic here
+        });
+      } else {
+        // Default sorting logic
+        return this.products.slice().sort((a, b) => {
+          const orderModifier = this.orderDirection === 'desc' ? -1 : 1;
+          return orderModifier * (a[this.orderBy] > b[this.orderBy] ? 1 : -1);
+        });
+      }
+    },
   },
   mounted() {
     this.fetchProducts();
@@ -104,10 +118,9 @@ export default {
         this.customer_name = response.data.username;
       } catch (error) {
         console.error('Error fetching logged-in user:', error);
-        // Handle the error as needed
       }
 
-      this.total_amount = 0;
+      this.total_amount = this.selectedProduct.price * this.quantity;
     },
     buy() {
       const order = {
@@ -116,7 +129,7 @@ export default {
         product_description: this.selectedProduct.description,
         product_price: this.selectedProduct.price,
         quantity: parseInt(this.quantity),
-        total_amount: this.selectedProduct.price * parseInt(this.quantity),
+        total_amount: this.total_amount,
       };
 
       // Add the order to the shopping cart
@@ -126,24 +139,80 @@ export default {
       axios.post('/api/submitOrder', order)
         .then(response => {
           console.log('Order submitted successfully:', response.data);
-          // Optionally, you can handle success actions here
         })
         .catch(error => {
           console.error('Error submitting order:', error);
-          // Optionally, you can handle error actions here
         });
 
       // Reset modal and quantity
       this.showModal = false;
       this.quantity = 1;
     },
+    updateTotalAmount() {
+      this.total_amount = this.selectedProduct.price * this.quantity;
+    },
     closeModal() {
       this.showModal = false;
     },
   },
 };
-</script>
+</script><style scoped>
+/* Card styles */
+.v-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
 
-<style scoped>
-/* ... your existing component-specific styles ... */
+.v-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.v-img {
+  border-radius: 8px 8px 0 0;
+}
+
+.v-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.v-card-subtitle {
+  color: #4caf50; /* Green color for price */
+  font-weight: bold;
+}
+
+.v-btn {
+  margin-top: 1rem;
+}
+
+/* Modal styles */
+.v-dialog {
+  font-family: 'Arial', sans-serif;
+}
+
+.v-card-title {
+  background-color: #4caf50; /* Green background for modal title */
+  color: white;
+}
+
+.v-card {
+  border-radius: 8px;
+}
+
+.v-text-field {
+  margin-bottom: 1rem;
+}
+
+.v-btn-primary {
+  color: #fff;
+  background-color: #4caf50; /* Green color for primary button */
+}
+
+.v-btn-error {
+  color: #fff;
+  background-color: #ff5252; /* Red color for error button */
+}
+
+/* Add other styles as needed */
 </style>
