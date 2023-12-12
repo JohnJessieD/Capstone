@@ -1,6 +1,6 @@
   <template>
     <div class="container">
-      <div class="login-container">
+      <div class="login-container" fluid fill-height>
         <v-sheet width="300" class="mx-auto">
           <v-form @submit.prevent="register">
             <div v-if="message === 'error'">Invalid response</div>

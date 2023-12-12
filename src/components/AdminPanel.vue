@@ -19,8 +19,7 @@
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-  
-      <v-app-bar app color="primary" class="app-bar-custom" dark>
+        <v-app-bar app color="primary" class="app-bar-custom" dark>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <v-toolbar-title class="home-title">
           <router-link to="/HomeView" style="text-decoration: none; color: inherit;">

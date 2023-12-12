@@ -7,8 +7,8 @@
             <v-card-title class="title headline">L o g i n</v-card-title>
             <v-card-text class="form">
               <v-form @submit.prevent="login">
-                <v-text-field v-model="username" label="Username" required class="solid-color-text-field"></v-text-field>
-                <v-text-field v-model="password" label="Password" type="password" required class="solid-background-text-field"></v-text-field>
+                <v-text-field v-model="username" label="Username"></v-text-field>
+                <v-text-field v-model="password" label="Password" type="password" ></v-text-field>
                 <v-btn type="submit" block class="login-button">Login</v-btn>
               </v-form>
             </v-card-text>
@@ -156,11 +156,6 @@ export default {
   margin-top: 16px;
 }
 
-.solid-color-text-field {
-  background-color: #ffffff94; /* Replace 'yourColor' with the desired color code or name */
-}
 
-.solid-background-text-field {
-  background-color: #ffffff94; /* Set the background color to your desired color */
-}
+
 </style>
