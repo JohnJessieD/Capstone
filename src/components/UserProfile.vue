@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background-color: #e0d9d9;">
    
     <v-container>
       <v-row>

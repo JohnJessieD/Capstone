@@ -17,31 +17,33 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="black" class="app-bar-custom" dark>
+    <v-app-bar app color="#F1C27B" class="app-bar-custom" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="home-title">
         <router-link to="/HomeView" style="text-decoration: none; color: inherit;">
-          <span class="logo">Malay Dynastea</span>
+          <span class="logo">Malay  Dynas<span class="tea">Tea</span></span>
+
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
-        v-model="searchQuery"
-        label="Search for your favorite tea"
-        prepend-icon="mdi-magnify"
-        @input="searchProducts"
-      ></v-text-field>
+  v-model="searchQuery"
+  label="Search"
+  prepend-icon="mdi-magnify"
+  @input="searchProducts"
+  style="margin-left: -210px; margin-right: 30px;"
+  ></v-text-field>
 
       <v-btn v-if="isAuthenticated" class="nav-btn" @click="handleLogout">
         Logout
       </v-btn>
 
-      <v-btn class="nav-btn" @click="$router.push({ name: 'BestProducts' })">Best Sellers</v-btn>
-      <v-btn class="nav-btn" @click="$router.push({ name: 'shopping-cart' })">Shopping Cart</v-btn>
-      <v-btn class="nav-btn" @click="$router.push({ name: 'OrderHistory' })">Order History</v-btn>
+      <v-btn class="nav-btnBP" @click="$router.push({ name: 'BestProducts' })" style="font-family: 'Times New Roman'; font-weight: bolder;">Best Sellers</v-btn>
+      <v-btn class="nav-btnSC" @click="$router.push({ name: 'shopping-cart' })" style="font-family: 'Times New Roman'; font-weight: bolder;">Shopping Cart</v-btn>
+      <v-btn class="nav-btnOH" @click="$router.push({ name: 'OrderHistory' })" style="font-family: 'Times New Roman'; font-weight: bolder;">Order History</v-btn>
     </v-app-bar>
 
-    <v-main>
+    <v-main style="background-color: #eee7e7;"> 
       <div class="product-card-container">
         <ProductCard />
       </div>
@@ -83,7 +85,11 @@ export default {
 /* Custom styles for your milk tea e-commerce website */
 
 .drawer-custom {
-  background-color: #f5f5f5; /* Light background color */
+  background-color: #ffffff; /* Light background color */
+}
+
+.app-bar-custom {
+  border-bottom: 1px solid #232424; /* Adjust the color and size as needed */
 }
 
 .app-bar-custom {
@@ -98,17 +104,24 @@ export default {
 }
 
 .logo {
-  font-family: 'Pacifico', cursive; /* Use a cursive font for the logo */
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font for the logo */
   font-size: 28px;
   color: #ffffff;
+  text-shadow: 1px 1px 1px black;
+}
+
+.tea {
+  color: #4caf50;/* Your styles for the "Tea" part */
+  font-size: 35px;
 }
 
 .nav-btn {
   color: #ffffff;
   margin-left: 10px;
+  text-shadow: 1px 1px 1px black;
+}
 
-
-  .drawer-item {
+.drawer-item {
   transition: background-color 0.3s; /* Smooth transition for background color change on hover */
 }
 
@@ -122,10 +135,18 @@ export default {
 }
 
 .drawer-link:hover {
-  color: #4caf50; /* Text color for drawer links on hover */
-}
-
+  color: #00f008; /* Text color for drawer links on hover */
 }
 
 /* Add more styles as needed for specific elements */
+
+.nav-btnBP:hover {
+  background-color: #e7af7d;
+}
+.nav-btnSC:hover {
+  background-color: #e7af7d;
+}
+.nav-btnOH:hover {
+  background-color: #e7af7d;
+}
 </style>
