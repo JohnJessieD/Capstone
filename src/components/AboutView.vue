@@ -8,7 +8,7 @@
 
     <!-- E-commerce Form with Box Shadow -->
     <div class="ecommerce-form">
-      <h2>Order Your Favorite Teas</h2>
+      <h2 style="background-color: #F1C27B;">Order Your Favorite Teas</h2>
       <!-- Your e-commerce form content goes here -->
       <!-- Include input fields for name, address, tea selection, etc. -->
     </div>
@@ -32,8 +32,8 @@
       <!-- Contact Information with Icons -->
       <div class="contact">
         <p class="contact-item"><i class="fas fa-map-marker-alt"></i> Lumangbayan, Calapan City, Oriental Mindoro</p>
-        <p class="contact-item"><i class="fas fa-phone-alt"></i> +123 456 7890</p>
-        <p class="contact-item"><i class="far fa-envelope"></i> info@malaydynastea.com</p>
+        <p class="contact-item"><i class="fas fa-phone-alt"></i> +0912 741 9447</p>
+        <p class="contact-item"><i class="far fa-envelope"></i> @malaydynastea.com</p>
       </div>
     </div>
   </div>

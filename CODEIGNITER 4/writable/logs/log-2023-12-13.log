@@ -2482,3 +2482,79 @@ in APPPATH\Controllers\OrderController.php on line 30.
  4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+ERROR - 2023-12-13 15:12:35 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'capstone', 3306, '', 0)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(60): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\Usercontroller->users()
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(89): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\Capstone\CODEIGNITER 4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\Capstone\CODEIGNITER 4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\Capstone\CODEIGNITER 4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\Capstone\CODEIGNITER 4\app\Controllers\Usercontroller.php(60): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(942): App\Controllers\Usercontroller->users()
+#7 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+#8 C:\laragon\www\Capstone\CODEIGNITER 4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\Capstone\CODEIGNITER 4\public\index.php(89): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\Capstone\CODEIGNITER 4\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-12-13 15:12:35 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Usercontroller.php(60): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usercontroller->users()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usercontroller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-13 15:46:59 --> Call to undefined method App\Models\OrderModel::getHighestBoughtProduct
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\OrderController.php(64): CodeIgniter\Model->__call('getHighestBoughtProduct', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->highestBoughtProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-13 15:49:33 --> Call to undefined method App\Models\OrderModel::getHighestBoughtProduct
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\OrderController.php(64): CodeIgniter\Model->__call('getHighestBoughtProduct', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->highestBoughtProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-13 15:51:28 --> Undefined property: App\Controllers\OrderController::$OrderModel
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$OrderModel', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-13 15:55:17 --> Undefined property: App\Controllers\OrderController::$OrderModel
+in APPPATH\Controllers\OrderController.php on line 30.
+ 1 APPPATH\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$OrderModel', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->orders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
