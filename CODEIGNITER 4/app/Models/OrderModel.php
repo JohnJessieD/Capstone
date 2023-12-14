@@ -36,4 +36,9 @@ class OrderModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getOrdersByUserId($userId)
+    {
+        return $this->where('user_id', $userId)->findAll();
+    }
 }

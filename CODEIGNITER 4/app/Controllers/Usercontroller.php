@@ -104,4 +104,39 @@ class Usercontroller extends ResourceController
 
         return $this->respond(['count' => $count]);
     }   
+
+
+
+
+    public function getUserProfile()
+    {
+        // Retrieve the logged-in user's data
+        $userId = session()->get('token'); // You should adjust this based on your authentication method
+        $userModel = new UserModel();
+        $userData = $userModel->find($userId);
+
+        return $this->respond($userData);
+    }
+
+    public function updateUserProfile()
+    {
+        $userId = session()->get('token'); // You should adjust this based on your authentication method
+        $userModel = new UserModel();
+
+        $data = [
+            'username' => $this->request->getVar('name'),
+            'password' => $this->request->getVar('email'),
+            'status' => $this->request->getVar('phone'),
+            // You can remove the old keys or keep them as they are
+            // 'address' => $this->request->getVar('address'),
+            // 'birthdate' => $this->request->getVar('birthdate'),
+            // 'gender' => $this->request->getVar('gender'),
+        ];
+        
+
+        // Update the user profile
+        $userModel->update($token, $data);
+
+        return $this->respond(['message' => 'Profile updated successfully']);
+    }
 }

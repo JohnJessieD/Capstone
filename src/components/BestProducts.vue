@@ -5,15 +5,16 @@
         <v-progress-circular indeterminate color="primary"></v-progress-circular>
       </v-col>
       <v-col v-else v-for="product in highestBoughtProduct" :key="product.product_id" cols="12" sm="6" md="4">
-        <v-card class="product-card">
-          <v-card-title class="text-h6">{{ product.name }}</v-card-title>
-          <v-card-subtitle>{{ product.description }}</v-card-subtitle>
-          <v-card-actions>
+    <v-card class="product-card">
+        <v-card-title class="text-h6">{{ product.name }}</v-card-title>
+        <v-card-subtitle>{{ product.description }}</v-card-subtitle>
+        <v-card-subtitle>Quantity: {{ product.quantity }}</v-card-subtitle>
+        <v-card-actions>
             <v-btn @click="addToCart(product)" color="primary">Add to Cart</v-btn>
             <div class="product-price">$ {{ product.price }}</div>
-          </v-card-actions>
-        </v-card>
-      </v-col>
+        </v-card-actions>
+    </v-card>
+</v-col>
     </v-row>
     <v-row v-if="error" cols="12" class="text-center">
       <v-col>

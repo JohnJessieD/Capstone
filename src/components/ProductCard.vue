@@ -1,17 +1,34 @@
 <template>
   <v-main>
     <v-container>
+      <!-- Search input -->
+      <v-text-field v-model="searchKeyword" label="Search" @input="searchProducts"></v-text-field>
+
+      <!-- Category filter -->
       <div>
-        <label for="orderDirection">Pricing:</label>
-        <select id="orderDirection" v-model="orderDirection" @change="fetchProducts">
-          <option value="asc">Highest- Lowest </option>
-          <option value="desc">Lowest-Highest</option>
+        <label for="category">Category:</label>
+        <select id="category" v-model="selectedCategory" @change="filterProductsByCategory">
+          <option v-for="category in categories" :key="category.id" :value="category.name">{{ category.name }}</option>
         </select>
+      </div>
+
+      <!-- Sorting options -->
+      <div>
+        <label for="orderBy">Sort By:</label>
+        <select id="orderBy" v-model="orderBy" @change="fetchProducts">
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+          <option value="custom">Custom Order</option>
+          <!-- Add more sorting options as needed -->
+        </select>
+
         <!-- Input for custom order -->
         <input v-if="orderBy === 'custom'" type="text" v-model="customOrder" placeholder="Enter custom order">
       </div>
+
+      <!-- Product cards -->
       <v-row>
-        <v-col v-for="product in sortedProducts" :key="product.id" cols="12" md="4">
+        <v-col v-for="product in paginatedProducts" :key="product.id" cols="12" md="4">
           <v-card class="pa-3 mb-4">
             <v-img :src="product.image" :alt="product.name" class="mb-3"></v-img>
             <v-card-title class="headline">{{ product.name }}</v-card-title>
@@ -21,25 +38,29 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-container>
 
-    <v-dialog v-model="showModal" max-width="400">
-      <v-card>
-        <v-card-title>Product Details</v-card-title>
-        <v-card-text>
-          <h3>{{ selectedProduct.name }}</h3>
-          <p>{{ selectedProduct.description }}</p>
-          <div>Price: $ {{ selectedProduct.price }}</div>
-          <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
-          <v-text-field v-model="total_amount" label="Total" type="number" min="1" :readonly="true"></v-text-field>
-          <v-text-field v-model="customer_name" label="Customer Name" :readonly="true"></v-text-field>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn @click="buy" color="primary">Buy</v-btn>
-          <v-btn @click="closeModal" color="error">Cancel</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+      <!-- Pagination -->
+      <v-pagination v-model="currentPage" :length="Math.ceil(filteredProducts.length / itemsPerPage)"></v-pagination>
+
+      <!-- Product details modal -->
+      <v-dialog v-model="showModal" max-width="400">
+        <v-card>
+          <v-card-title>Product Details</v-card-title>
+          <v-card-text>
+            <h3>{{ selectedProduct.name }}</h3>
+            <p>{{ selectedProduct.description }}</p>
+            <div>Price: $ {{ selectedProduct.price }}</div>
+            <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
+            <v-text-field v-model="total_amount" label="Total" type="number" min="1" :readonly="true"></v-text-field>
+            <v-text-field v-model="customer_name" label="Customer Name" :readonly="true"></v-text-field>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn @click="buy" color="primary">Buy</v-btn>
+            <v-btn @click="closeModal" color="error">Cancel</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-container>
   </v-main>
 </template>
 
@@ -57,26 +78,50 @@ export default {
       quantity: 1,
       total_amount: 0,
       orders: [],
-      orderBy: 'name', // Add orderBy for sorting
-      orderDirection: 'asc', // Add orderDirection for sorting
-      customOrder: '', // Add customOrder for custom sorting
+      orderBy: 'name',
+      orderDirection: 'asc',
+      customOrder: '',
+      searchKeyword: '',
+      selectedCategory: 'All',
+      currentPage: 1,
+      itemsPerPage: 9,
     };
   },
   computed: {
     sortedProducts() {
       if (this.orderBy === 'custom') {
-        // Custom order logic
         const customOrderArray = this.customOrder.split(',');
         return this.products.slice().sort((a, b) => {
           // Your custom sorting logic here
         });
       } else {
-        // Default sorting logic
         return this.products.slice().sort((a, b) => {
           const orderModifier = this.orderDirection === 'desc' ? -1 : 1;
           return orderModifier * (a[this.orderBy] > b[this.orderBy] ? 1 : -1);
         });
       }
+    },
+    filteredProducts() {
+      let filtered = this.sortedProducts;
+
+      if (this.selectedCategory !== 'All') {
+        filtered = filtered.filter(product => product.category === this.selectedCategory);
+      }
+
+      if (this.searchKeyword) {
+        const keywordLower = this.searchKeyword.toLowerCase();
+        filtered = filtered.filter(product =>
+          product.name.toLowerCase().includes(keywordLower) ||
+          product.description.toLowerCase().includes(keywordLower)
+        );
+      }
+
+      return filtered;
+    },
+    paginatedProducts() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.filteredProducts.slice(start, end);
     },
   },
   mounted() {
@@ -100,19 +145,13 @@ export default {
         console.error('Error fetching categories:', error);
       }
     },
-    filterProducts(category) {
-      if (category.name === 'All') {
-        this.fetchProducts();
-      } else {
-        const response = this.products.filter(product => product.category === category.name);
-        this.products = response;
-      }
+    filterProductsByCategory() {
+      this.fetchProducts();
     },
     async openProductModal(product) {
       this.selectedProduct = product;
       this.showModal = true;
 
-      // Fetch the logged-in user's information
       try {
         const response = await axios.get('/api/user/getLoggedInUser');
         this.customer_name = response.data.username;
@@ -132,10 +171,8 @@ export default {
         total_amount: this.total_amount,
       };
 
-      // Add the order to the shopping cart
       this.orders.push(order);
 
-      // Send the order to the backend for processing
       axios.post('/api/submitOrder', order)
         .then(response => {
           console.log('Order submitted successfully:', response.data);
@@ -144,7 +181,6 @@ export default {
           console.error('Error submitting order:', error);
         });
 
-      // Reset modal and quantity
       this.showModal = false;
       this.quantity = 1;
     },
@@ -156,7 +192,9 @@ export default {
     },
   },
 };
-</script><style scoped>
+</script>
+
+<style scoped>
 /* Card styles */
 .v-card {
   border: 1px solid #ddd;
@@ -178,7 +216,7 @@ export default {
 }
 
 .v-card-subtitle {
-  color: #4caf50; /* Green color for price */
+  color: #4caf50;
   font-weight: bold;
 }
 
@@ -192,7 +230,7 @@ export default {
 }
 
 .v-card-title {
-  background-color: #4caf50; /* Green background for modal title */
+  background-color: #4caf50;
   color: white;
 }
 
@@ -206,12 +244,12 @@ export default {
 
 .v-btn-primary {
   color: #fff;
-  background-color: #4caf50; /* Green color for primary button */
+  background-color: #4caf50;
 }
 
 .v-btn-error {
   color: #fff;
-  background-color: #ff5252; /* Red color for error button */
+  background-color: #ff5252;
 }
 
 /* Add other styles as needed */

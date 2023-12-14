@@ -44,45 +44,12 @@ class OrderController extends ResourceController
     }
 
     
-    public function search()
-{
-    $request = $this->request->getJSON();
-
-    // Check if $request is not null and has the property "searchQuery"
-    if ($request && property_exists($request, 'searchQuery')) {
-        $searchQuery = $request->searchQuery;
-
-        // Validate the search query if needed
-
-        $model = new ProductModel();
-
-        // Check if a search query is provided
-        if ($searchQuery) {
-            // If a search query is provided, perform a search
-            $result = $model->like('name', $searchQuery)->findAll();
-        } else {
-            // If no search query is provided, get all products
-            $result = $model->findAll();
-        }
-
-        return $this->respond($result, 200);
-    } else {
-        // Handle the case when "searchQuery" is not provided in the request
-        return $this->respond(['error' => 'Invalid search request'], 400);
-    }
-}
-
-    
-
-    public function highestBoughtProduct()
+    public function FindOrders()
     {
         $orderModel = new OrderModel();
-        $highestBoughtProduct = $orderModel->getHighestBoughtProduct();
+        $orders = $orderModel->findAll();
 
-        if ($highestBoughtProduct) {
-            return $this->respond($highestBoughtProduct, Response::HTTP_OK);
-        } else {
-            return $this->failNotFound('No highest bought product found.');
-        }
-    }   
+        return $this->respond($orders);
+    }
+
 }

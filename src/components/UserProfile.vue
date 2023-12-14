@@ -1,53 +1,32 @@
 <template>
   <div style="background-color: #e0d9d9;">
-   
     <v-container>
       <v-row>
-        <v-col cols="12" md="6"> 
-          
+        <v-col cols="12" md="6">
           <v-card>
-            <v-card-title>
-              Personal Information
-            </v-card-title>
+            <v-card-title>User Information</v-card-title>
             <v-card-text>
               <v-form ref="userForm">
                 <v-text-field
-                  label="Name"
-                  v-model="user.name"
+                  label="Username"
+                  v-model="user.username"
                   :readonly="!isEditing"
                 ></v-text-field>
                 <v-text-field
-                  label="Email"
-                  v-model="user.email"
-                  disabled
-                ></v-text-field>
-                <v-text-field
-                  label="Phone Number"
-                  v-model="user.phone"
+                  label="Password"
+                  v-model="user.password"
+                  type="password"
                   :readonly="!isEditing"
                 ></v-text-field>
                 <v-text-field
-                  label="Address"
-                  v-model="user.address"
-                  :readonly="!isEditing"
-                ></v-text-field>
-                <!-- Add more profile fields as needed -->
-
-                <!-- Additional fields for English site -->
-                <v-text-field
-                  label="Birthdate"
-                  v-model="user.birthdate"
-                  :readonly="!isEditing"
-                ></v-text-field>
-                <v-text-field
-                  label="Gender"
-                  v-model="user.gender"
+                  label="Status"
+                  v-model="user.status"
                   :readonly="!isEditing"
                 ></v-text-field>
               </v-form>
             </v-card-text>
             <v-card-actions>
-              <v-btn color="primary" @click="isEditing ? saveChanges() : editProfile">
+              <v-btn color="primary" @click="isEditing ? saveChanges() : editProfile()">
                 {{ isEditing ? 'Save' : 'Edit' }}
               </v-btn>
               <v-btn v-if="isEditing" @click="cancelEdit" color="error">
@@ -62,29 +41,44 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 
 export default {
-  
   data() {
     return {
       user: {
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        phone: '010-1234-5678',
-        address: 'Seoul, Gangnam-gu',
-        birthdate: '1990-01-01',
-        gender: 'Male',
+        username: '',
+        password: '',
+        token: '',
+        status: '',
+        role: '',
       },
       originalUser: {}, // Store the original user data for comparison
       isEditing: false, // Track whether the user is in edit mode
     };
   },
   methods: {
+    async getUserProfile() {
+      try {
+        const response = await axios.get('/api/user/profile'); // Adjust the URL if needed
+        this.user = { ...response.data };
+        this.originalUser = { ...response.data };
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
+    },
+    async updateUserProfile() {
+      try {
+        await axios.post('/api/profile', this.user); // Adjust the URL if needed
+        console.log('User profile updated successfully');
+      } catch (error) {
+        console.error('Error updating user profile:', error);
+      }
+    },
     editProfile() {
-      // Enter edit mode and store a copy of the original user data
+      // Enter edit mode and fetch user profile
       this.isEditing = true;
-      this.originalUser = { ...this.user };
+      this.getUserProfile();
     },
     cancelEdit() {
       // Cancel the edit and revert to the original data
@@ -92,14 +86,15 @@ export default {
       this.user = { ...this.originalUser };
     },
     saveChanges() {
-      // Simulate an API call to save changes
-      // In a real application, you would make an actual API request here
-      // For now, we'll just log the changes to the console
-      console.log('Changes saved:', this.user);
-
+      // Save changes to the user profile
+      this.updateUserProfile();
       // Exit edit mode
       this.isEditing = false;
     },
+  },
+  created() {
+    // Fetch user profile on component creation
+    this.getUserProfile();
   },
 };
 </script>

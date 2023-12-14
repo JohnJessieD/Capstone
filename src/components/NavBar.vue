@@ -26,13 +26,7 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-text-field
-      v-model="searchQuery"
-      label="Search"
-      append-icon="mdi-magnify"
-      @click:append="search"
-  style="margin-left: -210px; margin-right: 30px;"
-  ></v-text-field>
+     
 
       <v-btn v-if="isAuthenticated" class="nav-btn" @click="handleLogout">
         Logout
@@ -51,9 +45,7 @@
 </v-app>
 </template>
 
-
 <script>
-import axios from 'axios';
 import ProductCard from '@/components/ProductCard.vue';
 
 export default {
@@ -73,25 +65,9 @@ export default {
       products: [],
     };
   },
-  methods: {
-    search() {
-      // Make an Axios request to your API endpoint for product search
-      axios.get(`/api/search?query=${this.searchQuery}`)
-        .then(response => {
-          // Handle successful response
-          this.products = response.data; // Assuming the API returns an array of products
-        })
-        .catch(error => {
-          // Handle error
-          console.error('Error fetching search results:', error);
-        });
-    },
-    handleLogout() {
-      // Implement your logout functionality here
-    },
-  },
-};
+}
 </script>
+
 
 <style scoped>
 /* Custom styles for your milk tea e-commerce website */

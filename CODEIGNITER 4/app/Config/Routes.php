@@ -19,9 +19,22 @@ $routes->match(['get', 'post'], '/api/newproduct', 'Home::newproduct');
 $routes->put('api/updateproduct/(:num)', 'Home::updateProduct/$1');
 $routes->get( '/api/products', 'ProductController::Products');
 $routes->post('/api/submitOrder', 'OrderController::submitOrder');
-$routes->get('/api/highest-bought-product', 'OrderController::highestBoughtProduct');
+$routes->get('/api/highest-bought-product', 'ProductController::highestBoughtProduct');
 $routes->get('/api/orders', 'OrderController::orders');
-$routes->get('/api/search', 'OrderController::search');
+$routes->get('/api/search', 'ProductController::search');
+$routes->get('/api/orderProducts', 'ProductController::orderProducts');
+
+$routes->get('/api/user/profile', 'UserController::getUserProfile'); 
+$routes->post('/api/profile', 'UserController::updateUserProfile');
+$routes->get('/api/FindOrders', 'OrderController::FindOrders');
+
+
+
+
+
+
+
+
 //$routes->post('api/addOrder', 'OrderController::addOrder');
 //$routes->get('/api/sales/(:any)', 'ProductController::getSales/$1');
 //$routes->match(['get', 'post'], '/api/isales', 'ProductController::isales');

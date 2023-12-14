@@ -5,7 +5,7 @@ use CodeIgniter\RESTful\ResourceController;
 use App\Models\SalesModel;
 use App\Models\AuditModel;
 use App\Controllers\BaseController;
-use App\Models\OrderProductModel;
+use App\Models\OrderModel;
 use App\Models\ProductModel;
 use CodeIgniter\API\ResponseTrait;
 
@@ -14,10 +14,10 @@ class ProductController extends ResourceController
 {
     use ResponseTrait;
 
-    public function index()
-    {
-        return view('welcome_message');
-    }
+    public function __construct()
+{
+    $this->ProductModel = new \App\Models\ProductModel(); // Adjust based on your actual model class
+}
     public function updateProduct($id)
     {
       $data = $this->request->getJSON();
@@ -146,7 +146,48 @@ class ProductController extends ResourceController
         $orderModel->insert($data);
         return $this->respondCreated(['message' => 'Order submitted successfully']);
     }
-    
-}
+   
+    private function searchInDatabase($query)
+    {
+        // Replace this with your database query or any other search logic
+        // Example: Fetch products with names containing the search query
+        $model = new \App\Models\ProductModel();
+        $result = $model->like('name', $query)->findAll();
 
+        return $result;
+    }
+    public function highestBoughtProduct()
+    {
+        // Replace this with your actual logic to fetch products with many sales from the database
+        $productModel = new ProductModel();
+        $products = $productModel->orderBy('quantity', 'desc')->limit(5)->findAll();
 
+        return $this->respond($products);
+    }
+
+    public function orderProducts()
+    {
+        // Assuming you have an OrderProductsModel to fetch ordered products from the database
+        $orderProductsModel = new OrderModel();
+        $orderedProducts = $orderProductsModel->findAll(); // You may need to adjust this based on your actual database structure
+
+        return $this->response->setJSON($orderedProducts);
+    }
+    public function search()
+    {
+      $data = [
+        'name' => $this->request->getVar('name'),
+            'price' => $this->request->getVar('price'),
+      ];
+      $model = new ProductModel();
+
+      if ($this->request->getMethod() === 'post') {
+          $keyword = $this->request->getPost('search');
+          $data['results'] = $model->like('name', $keyword)
+                                  ->orLike('price', $keyword)
+                                  ->findAll();
+      }
+
+      return view('search/index', $data);
+    }
+  }
