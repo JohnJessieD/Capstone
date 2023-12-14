@@ -3,8 +3,8 @@
    
     <v-container>
       <v-row>
-        <v-col cols="12" md="6">
-          <h2>User Profile</h2>
+        <v-col cols="12" md="6"> 
+          
           <v-card>
             <v-card-title>
               Personal Information

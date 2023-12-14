@@ -27,10 +27,10 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
-  v-model="searchQuery"
-  label="Search"
-  prepend-icon="mdi-magnify"
-  @input="searchProducts"
+      v-model="searchQuery"
+      label="Search"
+      append-icon="mdi-magnify"
+      @click:append="search"
   style="margin-left: -210px; margin-right: 30px;"
   ></v-text-field>
 
@@ -39,19 +39,21 @@
       </v-btn>
 
       <v-btn class="nav-btnBP" @click="$router.push({ name: 'BestProducts' })" style="font-family: 'Times New Roman'; font-weight: bolder;">Best Sellers</v-btn>
-      <v-btn class="nav-btnSC" @click="$router.push({ name: 'shopping-cart' })" style="font-family: 'Times New Roman'; font-weight: bolder;">Shopping Cart</v-btn>
+      <v-btn class="nav-btnSC" @click="$router.push({ name: 'shopping-cart' })" style="font-family: 'Times New Roman'; font-weight: bolder;"> <v-icon>mdi-cart</v-icon>Shopping Cart</v-btn>
       <v-btn class="nav-btnOH" @click="$router.push({ name: 'OrderHistory' })" style="font-family: 'Times New Roman'; font-weight: bolder;">Order History</v-btn>
     </v-app-bar>
 
-    <v-main style="background-color: #eee7e7;"> 
-      <div class="product-card-container">
-        <ProductCard />
-      </div>
-    </v-main>
-  </v-app>
+    <v-main style="background-color: #eee7e7;">
+    <div class="product-card-container">
+      <ProductCard :products="products" />
+    </div>
+  </v-main>
+</v-app>
 </template>
 
+
 <script>
+import axios from 'axios';
 import ProductCard from '@/components/ProductCard.vue';
 
 export default {
@@ -68,11 +70,21 @@ export default {
         { icon: 'mdi-logout', title: 'Logout', route: { name: 'MainPage' } },
       ],
       searchQuery: '',
+      products: [],
     };
   },
   methods: {
-    searchProducts() {
-      // Implement your search functionality here
+    search() {
+      // Make an Axios request to your API endpoint for product search
+      axios.get(`/api/search?query=${this.searchQuery}`)
+        .then(response => {
+          // Handle successful response
+          this.products = response.data; // Assuming the API returns an array of products
+        })
+        .catch(error => {
+          // Handle error
+          console.error('Error fetching search results:', error);
+        });
     },
     handleLogout() {
       // Implement your logout functionality here

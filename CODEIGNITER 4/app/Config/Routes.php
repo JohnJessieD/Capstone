@@ -21,7 +21,7 @@ $routes->get( '/api/products', 'ProductController::Products');
 $routes->post('/api/submitOrder', 'OrderController::submitOrder');
 $routes->get('/api/highest-bought-product', 'OrderController::highestBoughtProduct');
 $routes->get('/api/orders', 'OrderController::orders');
-
+$routes->get('/api/search', 'OrderController::search');
 //$routes->post('api/addOrder', 'OrderController::addOrder');
 //$routes->get('/api/sales/(:any)', 'ProductController::getSales/$1');
 //$routes->match(['get', 'post'], '/api/isales', 'ProductController::isales');

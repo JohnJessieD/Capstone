@@ -34,6 +34,7 @@
         <p class="contact-item"><i class="fas fa-map-marker-alt"></i> Lumangbayan, Calapan City, Oriental Mindoro</p>
         <p class="contact-item"><i class="fas fa-phone-alt"></i> +0912 741 9447</p>
         <p class="contact-item"><i class="far fa-envelope"></i> @malaydynastea.com</p>
+        <p></p>
       </div>
     </div>
   </div>
