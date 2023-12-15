@@ -2,7 +2,7 @@
   <div>
     <h1>Branches</h1>
 
-    <button @click="fetchBranches">Fetch Branches</button>
+    <button @click="fetchBranches" :disabled="loading">Fetch Branches</button>
 
     <div v-if="branches.length">
       <h2>Branch List</h2>
@@ -25,10 +25,13 @@
       <label for="phone">Phone:</label>
       <input v-model="newBranch.phone" type="text" id="phone" required />
 
-      <button type="submit">Create Branch</button>
+      <button type="submit" :disabled="creating">Create Branch</button>
     </form>
+
+    <p v-if="error" style="color: red;">{{ error }}</p>
   </div>
 </template>
+
 <script>
 import axios from 'axios';
 
@@ -41,25 +44,42 @@ export default {
         address: '',
         phone: '',
       },
+      loading: false,
+      creating: false,
+      error: '',
     };
   },
   methods: {
     async fetchBranches() {
       try {
+        this.loading = true;
         const response = await axios.get('/api/branch');
         this.branches = response.data;
       } catch (error) {
-        console.error('Error fetching branches:', this.getErrorMessage(error));
+        this.error = this.getErrorMessage(error);
+      } finally {
+        this.loading = false;
       }
     },
     async createBranch() {
       try {
+        this.creating = true;
         await axios.post('/api/create', this.newBranch);
         console.log('Branch created successfully');
         this.fetchBranches(); // Refresh the branch list after creating a new branch
+        this.resetForm();
       } catch (error) {
-        console.error('Error creating branch:', this.getErrorMessage(error));
+        this.error = this.getErrorMessage(error);
+      } finally {
+        this.creating = false;
       }
+    },
+    resetForm() {
+      this.newBranch = {
+        name: '',
+        address: '',
+        phone: '',
+      };
     },
     getErrorMessage(error) {
       // Extract error message from the error object

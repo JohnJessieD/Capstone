@@ -27,28 +27,18 @@ $routes->get('/api/orderProducts', 'ProductController::orderProducts');
 $routes->get('/api/user/profile', 'UserController::getUserProfile'); 
 $routes->post('/api/profile', 'UserController::updateUserProfile');
 $routes->get('/api/FindOrders', 'OrderController::FindOrders');
+$routes->delete('/api/products/{id}', 'ProductController::removeProduct/$1');
+$routes->delete('/api/products/delete/(:num)', 'ProductController::removeProduct/$1');
+$routes->get('/api/branch', 'BranchController::index');
+$routes->post('/api/create', 'BranchController::create');
+$routes->put('/api/update/(:num)', 'RiderPanelController::update/$1');
 
+$routes->get('orders/(:segment)', 'ProductController::index/$1');
+$routes->put('orders/update/(:num)', 'ProductController::update/$1');
 
-
-
-
-
-
-
-//$routes->post('api/addOrder', 'OrderController::addOrder');
-//$routes->get('/api/sales/(:any)', 'ProductController::getSales/$1');
-//$routes->match(['get', 'post'], '/api/isales', 'ProductController::isales');
-//$routes->match(['get', 'post'], '/api/setsales/(:any)', 'ProductController::setsales/$1');
-//$routes->match(['get', 'post'], '/api/getProducts', 'ProductController::getProducts');
-//$routes->match(['get', 'post'], '/api/updateQuantity', 'ProductController::updateQuantity');
-//$routes->match(['get', 'post'], '/api/audit/(:any)', 'ProductController::audit/$1');
-//$routes->match(['get', 'post'], '/api/newproduct', 'ProductController::newproduct');
-//$routes->put('api/updateproduct/(:num)', 'ProductController::updateProduct/$1');
-
+$routes->post('/api/add-product', 'ProductController::addProduct');
 $routes->post('/api/create', 'UserController::create_user'); // Route to create a new user
 $routes->put('/api/update_user/(:num)', 'UserController::update_user/$1'); // Route to update a user by ID
 $routes->delete('/api/delete/(:num)', 'UserController::delete_user/$1'); // Route to delete a user by ID
 
 $routes->get('/api/users', 'Usercontroller::users');
-$routes->get('/api/branch', 'BranchController::index');      // Route to fetch all branches
-$routes->post('/api/create', 'BranchController::create'); // Route to create a new branch

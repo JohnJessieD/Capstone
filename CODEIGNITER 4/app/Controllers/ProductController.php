@@ -190,4 +190,87 @@ class ProductController extends ResourceController
 
       return view('search/index', $data);
     }
+
+    public function addProduct()
+    {
+        $productModel = new ProductModel();
+    
+        // Assuming you're receiving data via JSON request
+        $data = $this->request->getJSON();
+    
+        $productModel->insert($data);
+        return $this->respondCreated(['message' => 'Product added successfully']);
+    }
+public function index()
+  {
+        $orderModel = new OrderModel();
+
+        // Get the status filter from the query parameters
+        $status = $this->request->getGet('status');
+
+        // If status is provided, filter orders by status
+        if ($status) {
+            $orders = $orderModel->where('status', $status)->findAll();
+        } else {
+            // Otherwise, fetch all orders
+            $orders = $orderModel->findAll();
+        }
+
+        return $this->respond($orders);
+    }
+
+    // Update order status
+    public function update($id = null)
+    {
+        $orderModel = new OrderModel();
+
+        // Fetch the order
+        $order = $orderModel->find($id);
+
+        if (!$order) {
+            return $this->failNotFound('Order not found');
+        }
+
+        // Extract the new status from the request data
+        $newStatus = $this->request->getJSON()->status;
+
+        // Validate the new status (you may add more validation)
+        if (!in_array($newStatus, ['ongoing', 'delivered'])) {
+            return $this->fail('Invalid status provided');
+        }
+
+        // Update the order status
+        $orderModel->update($id, ['status' => $newStatus]);
+
+        // Respond with success message or updated order
+        return $this->respondUpdated(['status' => 'Order status updated successfully']);
+    }
+
+
+    
+
+public function removeProduct($id)
+{
+    $productModel = new ProductModel();
+    $product = $productModel->find($id);
+
+    if ($product) {
+        $product->delete();
+        return response()->json(['msg' => 'Product deleted successfully']);
+    } else {
+        return response()->json(['msg' => 'Product not found'], 404);
+    }
+}
+
+public function getChartData()
+{
+    $productModel = new ProductModel();
+    $chartData = $productModel->select('name, SUM(quantity) as totalQuantity')
+                            ->groupBy('name')
+                            ->findAll();
+
+    return $this->respond($chartData);
+}
+
+
   }

@@ -17,6 +17,23 @@ const routes = [
     name: 'ProductCard',
     component: () => import(/* webpackChunkName: "ProductCard" */ '../views/ProductCard.vue')
   },
+
+  {
+    path: '/Cashier',
+    name: 'Cashier',
+    component: () => import(/* webpackChunkName: "Cashier" */ '../views/Cashier/Cashier.vue')
+  },
+  
+  {
+    path: '/sows',
+    name: 'sows',
+    component: () => import(/* webpackChunkName: "sows" */ '../views/sows.vue')
+  },
+  {
+    path: '/Riderpanel',
+    name: 'Riderpanel',
+    component: () => import(/* webpackChunkName: "Riderpanel" */ '../views/RiderPanel/Riderpanel.vue')
+  },
   {
     path: '/',
     name: 'MainPage',

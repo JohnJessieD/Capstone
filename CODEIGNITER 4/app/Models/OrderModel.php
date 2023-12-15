@@ -12,7 +12,7 @@ class OrderModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['customer_name', 'product_name', 'product_description', 'product_price', 'quantity', 'total_amount'];
+    protected $allowedFields = ['customer_name', 'product_name', 'status', 'product_description', 'product_price', 'quantity', 'total_amount'];
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

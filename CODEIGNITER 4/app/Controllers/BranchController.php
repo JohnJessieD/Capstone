@@ -10,19 +10,19 @@ class BranchController extends ResourceController
 {
     use ResponseTrait;
 
-    private $branchModel;
+    private $BranchModel;
 
-    public function __construct()
+    public function __construct(BranchModel $BranchModel)
     {
         // Use dependency injection to inject the BranchModel
-        $this->branchModel = new BranchModel();
+        $this->BranchModel = $BranchModel;
     }
 
     public function index()
     {
         try {
             // Fetch branches from the database
-            $branches = $this->branchModel->findAll();
+            $branches = $this->BranchModel->findAll();
 
             return $this->respond($branches);
         } catch (\Exception $e) {
@@ -42,7 +42,7 @@ class BranchController extends ResourceController
             }
 
             // Insert into the database
-            $this->branchModel->insert($data);
+            $this->BranchModel->insert($data);
 
             return $this->respondCreated(['message' => 'Branch created successfully']);
         } catch (\Exception $e) {
