@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-container class="login-container" fluid fill-height>
+      <img src="/img/malay_dynastea.png" alt="Malay Dynastea" class="image-hover" />
       <v-row justify="center" align="center">
         <v-col cols="12" sm="8" md="4">
           <v-card class="login-card">
@@ -47,7 +48,20 @@ export default {
         if ('msg' in response.data) {
           if (response.data.msg === 'okay') {
             // Check the user role and redirect accordingly
-            this.$router.push(response.data.role === 'admin' ? '/AdminPanel' : '/NavBar');
+            switch (response.data.role) {
+              case 'admin':
+                this.$router.push('/AdminPanel');
+                break;
+              case 'cashier':
+                this.$router.push('/Cashier');
+                break;
+              case 'delivery':
+                this.$router.push('/RiderPanel');
+                break;
+              case 'user':
+              default:
+                this.$router.push('/NavBar');
+            }
           } else {
             this.message = 'Login failed. Please try again.';
           }
@@ -78,7 +92,7 @@ export default {
   overflow: hidden;
   background-size: 100%;
   background-color: #96B6C5;
-  background-image: url('https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/245382281_233644962130684_5227005316872638252_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeHBRmd86-co5qr_kqqCyP4BoOlZRQC8stmg6VlFALyy2SKKxDcztgADf9qBwea39DEnvvRMIC_oHbL-EVtXbLrS&_nc_ohc=tl2dNdUvIsEAX-J5zMv&_nc_ht=scontent.fmnl30-2.fna&oh=00_AfAx47Uemul0Mv6SvadILxy8XfEaT7jMHwSP7nx7ETZoow&oe=657DC1F6');
+  
 }
 
 .login-card {

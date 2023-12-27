@@ -10,18 +10,20 @@ use App\Models\UserModel;
 class Usercontroller extends ResourceController
 {
     use ResponseTrait;
-
     public function register()
     {
         $user = new UserModel();
         $token = $this->verification(50);
+        $userRole = $this->request->getVar('role'); // Get the selected user role
+    
         $data = [
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             'token' => $token,
             'status' => 'active',
-            'role' => 'user','admin'
+            'role' => $userRole, // Use the selected user role in the data array
         ];
+    
         $u = $user->save($data);
         if ($u) {
             return $this->respond(['msg' => 'okay', 'token' => $token]);
@@ -29,6 +31,7 @@ class Usercontroller extends ResourceController
             return $this->respond(['msg' => 'failed']);
         }
     }
+    
 
     public function verification($length)
     {
@@ -42,16 +45,17 @@ class Usercontroller extends ResourceController
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
         $data = $user->where('username', $username)->first();
-
+    
         if ($data) {
             $pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
             if ($authenticatePassword) {
-                return $this->respond(['msg' => 'okay', 'token' => $data['token']]);
+                return $this->respond(['msg' => 'okay', 'token' => $data['token'], 'role' => $data['role']]);
             } else {
                 return $this->respond(['msg' => 'error'], 200);
             }
         }
+        return $this->respond(['msg' => 'userNotFound'], 404);
     }
 
     public function users($id = null)

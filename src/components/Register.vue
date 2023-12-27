@@ -1,19 +1,20 @@
-  <template>
-    <div class="container">
-      <div class="login-container" fluid fill-height>
-        <v-sheet width="300" class="mx-auto">
-          <v-form @submit.prevent="register">
-            <div v-if="message === 'error'">Invalid response</div>
-            <v-text-field v-model="username" label="Username" required></v-text-field>
-            <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
-            <v-text-field v-model="passwordConfirm" label="Password Confirm" type="password" required></v-text-field>
-            <div v-if="message === 'passwordMismatch'">Passwords do not match</div>
-            <div v-if="message === 'registrationFailed'">Registration failed. Please try again.</div>
-            <v-btn type="submit" block class="mt-2" color="blue">Submit</v-btn>
-          </v-form>
-        </v-sheet>
-      </div>
+<template>
+  <div class="container">
+    <div class="login-container" fluid fill-height>
+      <v-sheet width="300" class="mx-auto">
+        <v-form @submit.prevent="register">
+          <div v-if="message === 'error'">Invalid response</div>
+          <v-text-field v-model="username" label="Username" required></v-text-field>
+          <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
+          <v-text-field v-model="passwordConfirm" label="Password Confirm" type="password" required></v-text-field>
+          <v-select v-model="userRole" :items="userRoles" label="Select User Role" required></v-select>
+          <div v-if="message === 'passwordMismatch'">Passwords do not match</div>
+          <div v-if="message === 'registrationFailed'">Registration failed. Please try again.</div>
+          <v-btn type="submit" block class="mt-2" color="blue">Submit</v-btn>
+        </v-form>
+      </v-sheet>
     </div>
+  </div>
 </template>
 
 <script>
@@ -25,6 +26,8 @@ export default {
       username: '',
       password: '',
       passwordConfirm: '',
+      userRole: '',
+      userRoles: ['user', 'admin', 'cashier', 'delivery'],
       message: '',
     };
   },
@@ -32,28 +35,31 @@ export default {
     async register() {
       if (this.password === this.passwordConfirm) {
         try {
-          const response = await axios.post("api/register", {
+          const response = await axios.post('api/register', {
             username: this.username,
-            password: this.password
+            password: this.password,
+            role: this.userRole,
           });
 
           if (response.data.msg === 'okay') {
-            alert("Registered successfully");
+            alert('Registered successfully');
             this.$router.push('/login');
           } else {
             this.message = 'registrationFailed';
           }
         } catch (error) {
-          console.error("Error during registration:", error);
+          console.error('Error during registration:', error);
           this.message = 'error';
         }
       } else {
-        this.message = "passwordMismatch";
+        this.message = 'passwordMismatch';
       }
-    }
-  }
+    },
+  },
 };
-</script><style scoped>
+</script>
+
+<style scoped>
 .container {
   height: 100vh;
   display: flex;
