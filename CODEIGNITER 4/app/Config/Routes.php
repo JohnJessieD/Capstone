@@ -50,3 +50,6 @@ $routes->get('/api/GetOrderDetails/(:num)', 'OrderController::getOrderDetails/$1
 $routes->get('/api/OrderDetails/{Id}', 'OrderController::OrderDetails');
 $routes->post('/api/cancelOrder', 'OrderController::cancelOrder');
 $routes->post('api/deleteOrder/(:num)', 'OrderController::deleteOrder/$1');
+$routes->post('/api/placeOrder', 'OrderController::placeOrder');// app/Config/Routes.php
+
+$routes->get('/api/highest-sales', 'OrderController::getHighestSales');

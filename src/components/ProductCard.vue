@@ -44,27 +44,34 @@
 
       <!-- Product details modal -->
       <v-dialog v-model="showModal" max-width="400">
-  <v-card>
-    <v-card-title>Product Details</v-card-title>
-    <v-card-text>
-      <h3>{{ selectedProduct.name }}</h3>
-      <p>{{ selectedProduct.description }}</p>
-      <div>Price: $ {{ selectedProduct.price }}</div>
-      <div>UPC: {{ selectedProduct.upc }}</div>
-      <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
-      <v-text-field v-model="total_amount" label="Total" type="number" min="1" :readonly="true"></v-text-field>
+        <v-card>
+          <v-card-title>Product Details</v-card-title>
+          <v-card-text>
+            <h3>{{ selectedProduct.name }}</h3>
+            <p>{{ selectedProduct.description }}</p>
+            <div>Price: $ {{ selectedProduct.price }}</div>
+            <div>UPC: {{ selectedProduct.upc }}</div>
+            <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
 
-      <!-- Add these fields for user input -->
-      <v-text-field v-model="customer_name" label="Customer Name"></v-text-field>
-      <v-text-field v-model="customer_address" label="Customer Address"></v-text-field>
-    </v-card-text>
-    <v-card-actions>
-      <v-btn @click="buy" color="primary">Buy</v-btn>
-      <v-btn @click="closeModal" color="error">Cancel</v-btn>
-    </v-card-actions>
-  </v-card>
-</v-dialog>
+            <!-- Dropdown for sugar variety -->
+            <v-select v-model="selectedSugarVariety" :items="sugarVarieties" label="Sugar Variety"></v-select>
 
+            <!-- Dropdown for sugar level -->
+            <v-select v-model="selectedSugarLevel" :items="sugarLevels" label="Sugar Level"></v-select>
+
+            <!-- Dropdown for size -->
+            <v-select v-model="selectedSize" :items="sizes" label="Size"></v-select>
+
+            <!-- Add these fields for user input -->
+            <v-text-field v-model="customer_name" label="Customer Name"></v-text-field>
+            <v-text-field v-model="customer_address" label="Customer Address"></v-text-field>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn @click="buy" color="primary">Buy</v-btn>
+            <v-btn @click="closeModal" color="error">Cancel</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-container>
   </v-main>
 </template>
@@ -93,6 +100,12 @@ export default {
       currentPage: 1,
       itemsPerPage: 9,
       image: '',
+      sugarVarieties: ['White Sugar', 'Brown Sugar', 'Raw Sugar', 'Maple Sugar'],
+      selectedSugarVariety: 'White Sugar',
+      sugarLevels: ['Low', 'Medium', 'High'],
+      selectedSugarLevel: 'Medium',
+      sizes: ['Small', 'Medium', 'Large'],
+      selectedSize: 'Medium',
     };
   },
   computed: {
@@ -182,27 +195,26 @@ export default {
         product_price: this.selectedProduct.price,
         quantity: parseInt(this.quantity),
         total_amount: this.total_amount,
-        product_upc: this.selectedProduct.upc
+        product_upc: this.selectedProduct.upc,
+        sugar_variety: this.selectedSugarVariety,
+        sugar_level: this.selectedSugarLevel,
+        size: this.selectedSize,
       };
 
       this.orders.push(order);
 
-axios.post('/api/submitOrder', order)
-  .then(response => {
-    // Assuming the response contains the order ID or additional information
-    console.log('Order submitted successfully:', response.data);
-
-    // If needed, update the local order with additional information from the response
-    // For example, if the backend assigns an order ID, you might want to update your local order
-    const submittedOrder = response.data.order;
-    const localOrderIndex = this.orders.findIndex(o => o.product_upc === submittedOrder.product_upc);
-    if (localOrderIndex !== -1) {
-      this.orders[localOrderIndex] = submittedOrder;
-    }
-  })
-  .catch(error => {
-    console.error('Error submitting order:', error);
-  });
+      axios.post('/api/submitOrder', order)
+        .then(response => {
+          console.log('Order submitted successfully:', response.data);
+          const submittedOrder = response.data.order;
+          const localOrderIndex = this.orders.findIndex(o => o.product_upc === submittedOrder.product_upc);
+          if (localOrderIndex !== -1) {
+            this.orders[localOrderIndex] = submittedOrder;
+          }
+        })
+        .catch(error => {
+          console.error('Error submitting order:', error);
+        });
 
       this.showModal = false;
       this.quantity = 1;

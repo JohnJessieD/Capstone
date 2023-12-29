@@ -5,7 +5,7 @@
     </head>
     <h2 class="page-title">Your Milk Tea Order</h2>
     <p v-if="loggedInUser" class="user-info">Welcome, {{ loggedInUser.username }}!</p>
-    
+
     <ul class="product-list">
       <li v-for="(product, index) in displayedProducts" :key="product.order_id" class="product-item">
         <img :src="product.image" class="product-image">
@@ -15,30 +15,44 @@
             <strong>Quantity:</strong> {{ product.quantity }}<br>
             <strong>Total Amount:</strong> ${{ product.total_amount.toFixed(2) }}<br>
             <strong>Status:</strong> {{ product.status }}
+            <button @click="openAddonsModal(product)">Add Addons</button>
             <button @click="cancelOrder(product.order_id)">Cancel Order</button>
           </div>
         </div>
       </li>
     </ul>
-    
+
     <div class="pagination">
       <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
       <span>Page {{ currentPage }} of {{ totalPages }}</span>
       <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
     </div>
+
+    <!-- Addons modal -->
+    <addons
+      :visible="addonsModalVisible"
+      :selectedProductId="selectedProductId"
+      @close="closeAddonsModal"
+    />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import addons from '../views/addons.vue';
 
 export default {
+  components: {
+    addons,
+  },
   data() {
     return {
       orderedProducts: [],
       loggedInUser: null,
-      itemsPerPage: 5,
+      itemsPerPage: 4,
       currentPage: 1,
+      addonsModalVisible: false,
+      selectedProductId: null,
     };
   },
   computed: {
@@ -64,29 +78,29 @@ export default {
       }
     },
     async cancelOrder(order_id) {
-  if (confirm('Are you sure you want to cancel your order?')) {
-    try {
-      const reason = prompt('Please provide a reason for cancellation:');
-      if (!reason) {
-        throw new Error('Cancellation reason is required.');
+      if (confirm('Are you sure you want to cancel your order?')) {
+        try {
+          const reason = prompt('Please provide a reason for cancellation:');
+          if (!reason) {
+            throw new Error('Cancellation reason is required.');
+          }
+
+          // Send cancellation request to the server
+          await axios.post('/api/cancelOrder', { order_id, reason });
+
+          // Delete the order on the server
+          await this.deleteOrder(order_id);
+
+          // Update the orderedProducts array in the component's data
+          this.orderedProducts = this.orderedProducts.filter(product => product.order_id !== order_id);
+
+          console.log('Order canceled!');
+        } catch (error) {
+          console.error('Error canceling order:', error.message);
+          // You can display an error message to the user if needed
+        }
       }
-
-      // Send cancellation request to the server
-      await axios.post('/api/cancelOrder', { order_id, reason });
-
-      // Delete the order on the server
-      await this.deleteOrder(order_id);
-
-      // Update the orderedProducts array in the component's data
-      this.orderedProducts = this.orderedProducts.filter(product => product.order_id !== order_id);
-
-      console.log('Order canceled!');
-    } catch (error) {
-      console.error('Error canceling order:', error.message);
-      // You can display an error message to the user if needed
-    }
-  }
-},
+    },
 
     async deleteOrder(order_id) {
       try {
@@ -97,11 +111,12 @@ export default {
         // You can display an error message to the user if needed
       }
     },
+
     async fetchOrderedProducts() {
       try {
         const response = await axios.get('/api/orderProducts');
         const data = response.data;
-        
+
         // Ensure that total_amount is converted to a number
         this.orderedProducts = data.map(product => ({
           ...product,
@@ -113,6 +128,7 @@ export default {
         throw error; // Propagate the error to handle it in the calling code
       }
     },
+
     async fetchLoggedInUser() {
       try {
         const response = await axios.get('/api/loggedInUser');
@@ -122,11 +138,23 @@ export default {
         throw error; // Propagate the error to handle it in the calling code
       }
     },
+
+    openAddonsModal(product) {
+      this.addonsModalVisible = true;
+      this.selectedProductId = product.order_id;
+    },
+
+    closeAddonsModal() {
+      this.addonsModalVisible = false;
+      this.selectedProductId = null;
+    },
+
     prevPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
       }
     },
+
     nextPage() {
       if (this.currentPage < this.totalPages) {
         this.currentPage++;
@@ -135,10 +163,6 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Your existing styles remain unchanged */
-</style>
 
 
 <style scoped>

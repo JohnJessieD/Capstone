@@ -4,7 +4,7 @@
       <div class="order-card-header" style="border-bottom: 2px solid #4d4d4d; padding-bottom: 1rem; margin-bottom: 1rem;">
         <h2 style="color: #ffbf00; font-size: 1.5rem; margin-bottom: 0.5rem;">{{ order.product_name }}</h2>
         <p class="order-id" style="color: #a0a0a0; font-size: 0.9rem; margin-bottom: 0.5rem;">
-          <i class="fas fa-receipt" style="color: #4d4d4d;"></i> Order #{{ order.id }} - {{ formatDate(order.date) }}
+          <i class="fas fa-receipt" style="color: #4d4d4d;"></i> Order #{{ order.order_id }} - {{ formatDate(order.date) }}
         </p>
         <p class="order-status" style="color: #a0a0a0; font-size: 0.9rem;">
           <i class="fas fa-info-circle" style="color: #4d4d4d;"></i> Status: {{ order.status }}
@@ -29,10 +29,37 @@
           {{ order.total_amount | currency }}
         </p>
       </div>
-      <button @click="viewOrderDetails(order.id)" style="background-color: #ffbf00; color: #1a1a1a; padding: 0.5rem 1rem; border: none; cursor: pointer;">
+      <button @click="openOrderDetailsModal(order)" style="background-color: #ffbf00; color: #1a1a1a; padding: 0.5rem 1rem; border: none; cursor: pointer;">
         View Details
       </button>
     </div>
+
+    <!-- Order Details Modal -->
+    <modal v-if="orderDetailsModalOpen" @before-close="closeOrderDetailsModal">
+      <div class="order-details-container" style="background-color: #1a1a1a; color: #fff; padding: 20px;">
+        <h2 v-if="selectedOrder">Order Details for Order #{{ selectedOrder.id }}</h2>
+        
+        <div v-if="selectedOrder">
+          <!-- Display order details -->
+          <p><strong>Customer Name:</strong> {{ selectedOrder.customer_name }}</p>
+          <p><strong>Customer Address:</strong> {{ selectedOrder.customer_address }}</p>
+          <p><strong>Product Name:</strong> {{ selectedOrder.product_name }}</p>
+          <p><strong>Status:</strong> {{ selectedOrder.status }}</p>
+          <p><strong>Product Description:</strong> {{ selectedOrder.product_description }}</p>
+          <p><strong>Product Price:</strong> {{ selectedOrder.product_price }}</p>
+          <p><strong>Quantity:</strong> {{ selectedOrder.quantity }}</p>
+          <p><strong>Total Amount:</strong> {{ selectedOrder.total_amount }}</p>
+        </div>
+
+        <div v-else>
+          <p>Loading...</p>
+        </div>
+
+        <div v-if="error">
+          <p>Error fetching order details: {{ error }}</p>
+        </div>
+      </div>
+    </modal>
 
     <!-- Pagination -->
     <div class="pagination" style="margin-top: 2rem; display: flex; justify-content: center;">
@@ -47,7 +74,6 @@
   </div>
 </template>
 
-
 <script>
 import axios from 'axios';
 
@@ -57,6 +83,9 @@ export default {
       orders: [],
       currentPage: 1,
       ordersPerPage: 10,
+      orderDetailsModalOpen: false,
+      selectedOrder: null,
+      error: null,
     };
   },
   computed: {
@@ -81,8 +110,13 @@ export default {
         console.error('Error fetching orders', error);
       }
     },
-    viewOrderDetails(order_id) {
-     this.$router.push(`/OrderDetails/${order_id}`);
+    openOrderDetailsModal(order) {
+      this.selectedOrder = order;
+      this.orderDetailsModalOpen = true;
+    },
+    closeOrderDetailsModal() {
+      this.orderDetailsModalOpen = false;
+      this.selectedOrder = null;
     },
     loadPreviousPage() {
       if (this.currentPage > 1) {
@@ -102,6 +136,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .order-history-container {
   display: flex;
@@ -147,6 +182,6 @@ export default {
 .pagination button:disabled {
   background-color: #ccc;
   border-color: #ccc;
-  cursor: not-allowed;
+  cursor: not-allowed; 
 }
 </style>

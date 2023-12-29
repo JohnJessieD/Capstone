@@ -39,22 +39,27 @@ class OrderController extends ResourceController
         $data = $this->request->getJSON(true);
     
         // Assuming you have a model named OrderModel
-        $OrderModel = new OrderModel();
-        
+        $orderModel = new OrderModel();
+    
         // Assuming UserModel is the user model
         $userModel = new \App\Models\UserModel();
     
         // Fetch the user ID based on your authentication method
-        $id = session()->get('token'); // Adjust this based on your authentication method
-        $user = $userModel->find($id);
+        $userId = session()->get('token'); // Adjust this based on your authentication method
+        $user = $userModel->find($userId);
     
         // Check if the user is found before associating the user ID with the order
         if ($user) {
             // Add the user ID to the order data
-            $data['user_id'] = $id;
+            $data['user_id'] = $userId;
     
-            // Insert the order with the associated user ID
-            $OrderModel->insert($data);
+            // Additional fields from the frontend (adjust these based on your actual field names)
+            $data['sugar_variety'] = $data['sugar_variety'] ?? '';
+            $data['sugar_level'] = $data['sugar_level'] ?? '';
+            $data['size'] = $data['size'] ?? '';
+    
+            // Insert the order with the associated user ID and additional fields
+            $orderModel->insert($data);
     
             return $this->respondCreated(['message' => 'Order submitted successfully']);
         } else {
@@ -175,4 +180,7 @@ class OrderController extends ResourceController
 
         return $this->response->setJSON(['message' => 'Order deleted successfully']);
     }
+
+
+    
 }

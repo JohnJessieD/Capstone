@@ -1,4 +1,4 @@
-add style on this <template>
+<template>
   <div>
     <table class="styled-table">
       <thead>
@@ -24,6 +24,8 @@ add style on this <template>
             <v-btn @click="openQuantityModal(item)">Add Quantity</v-btn>
             <br />
             <router-link :to="{ path: '/history/:upc' + item.upc }" class="button">Audit</router-link>
+            <v-btn @click="editProduct(item)">Edit</v-btn>
+            <v-btn @click="deleteProduct(item.upc)">Delete</v-btn>
           </td>
         </tr>
       </tbody>
@@ -34,7 +36,6 @@ add style on this <template>
       <v-card>
         <v-card-title>Add Quantity</v-card-title>
         <v-card-text>
-          <!-- Your quantity input field and other necessary fields go here -->
           <v-text-field v-model="quantityToAdd" label="Quantity"></v-text-field>
         </v-card-text>
         <v-card-actions>
@@ -43,6 +44,47 @@ add style on this <template>
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+    <!-- Edit Product Modal -->
+    <v-dialog v-model="editProductModal" max-width="600">
+      <v-card>
+        <v-card-title>Edit Product</v-card-title>
+        <v-card-text>
+          <v-text-field v-model="editedProduct.name" label="Name"></v-text-field>
+          <v-text-field v-model="editedProduct.description" label="Description"></v-text-field>
+          <v-text-field v-model="editedProduct.quantity" label="Quantity"></v-text-field>
+          <v-text-field v-model="editedProduct.price" label="Price"></v-text-field>
+          <v-text-field v-model="editedProduct.category" label="Category"></v-text-field>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn @click="updateProduct">Update</v-btn>
+          <v-btn @click="closeEditProductModal">Cancel</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <!-- ... (other modals if needed) ... -->
+
+    <v-btn @click="openAddProductModal">Add Product</v-btn>
+
+    <!-- Add Product Modal -->
+    <v-dialog v-model="addProductModal" max-width="600">
+      <v-card>
+        <v-card-title>Add Product</v-card-title>
+        <v-card-text>
+          <v-text-field v-model="newProduct.name" label="Name"></v-text-field>
+          <v-text-field v-model="newProduct.description" label="Description"></v-text-field>
+          <v-text-field v-model="newProduct.quantity" label="Quantity"></v-text-field>
+          <v-text-field v-model="newProduct.price" label="Price"></v-text-field>
+          <v-text-field v-model="newProduct.category" label="Category"></v-text-field>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn @click="addProduct">Add</v-btn>
+          <v-btn @click="closeAddProductModal">Cancel</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
   </div>
 </template>
 
@@ -53,8 +95,24 @@ export default {
   data() {
     return {
       quantityModal: false,
+      editProductModal: false,
+      addProductModal: false,
       selectedProduct: null,
       quantityToAdd: 0,
+      editedProduct: {
+        name: '',
+        description: '',
+        quantity: 0,
+        price: 0,
+        category: '',
+      },
+      newProduct: {
+        name: '',
+        description: '',
+        quantity: 0,
+        price: 0,
+        category: '',
+      },
       search: '',
       desserts: [],
     };
@@ -74,46 +132,89 @@ export default {
       this.quantityToAdd = 0;
       this.quantityModal = false;
     },
-    async addQuantity() {
-      const updatedProduct = { ...this.selectedProduct };
-      updatedProduct.quantity += parseInt(this.quantityToAdd);
-      await axios.post('api/updateQuantity', {
-        upc: updatedProduct.upc,
-        quantity: this.quantityToAdd,
-      });
-      const index = this.desserts.findIndex((product) => product.upc === updatedProduct.upc);
-      this.getProducts();
-      this.closeQuantityModal();
+
+    editProduct(item) {
+      this.editedProduct = { ...item };
+      this.editProductModal = true;
     },
-    async getProducts() {
-      const data = await axios.get('api/getProducts');
-      this.desserts = data.data;
+
+    closeEditProductModal() {
+      this.editedProduct = {
+        name: '',
+        description: '',
+        quantity: 0,
+        price: 0,
+        category: '',
+      };
+      this.editProductModal = false;
     },
+
+    updateProduct() {
+      // Implement logic to update the product on the server
+      axios.put(`api/updateProduct/${this.editedProduct.upc}`, this.editedProduct)
+        .then(() => {
+          this.getProducts();
+          this.closeEditProductModal();
+        })
+        .catch(error => {
+          console.error('Error updating product:', error);
+        });
+    },
+
+    openAddProductModal() {
+      this.addProductModal = true;
+    },
+
+    closeAddProductModal() {
+      this.newProduct = {
+        name: '',
+        description: '',
+        quantity: 0,
+        price: 0,
+        category: '',
+      };
+      this.addProductModal = false;
+    },
+
+    addProduct() {
+      // Implement logic to add a new product on the server
+      axios.post('api/newproduct', this.newProduct)
+        .then(() => {
+          this.getProducts();
+          this.closeAddProductModal();
+        })
+        .catch(error => {
+          console.error('Error adding product:', error);
+        });
+    },
+
+    deleteProduct(upc) {
+      // Implement logic to delete the product on the server
+      axios.delete(`api/removeProduct/${upc}`)
+        .then(() => {
+          this.getProducts();
+        })
+        .catch(error => {
+          console.error('Error deleting product:', error);
+        });
+    },
+
+    getProducts() {
+      axios.get('api/getProducts')
+        .then(response => {
+          this.desserts = response.data;
+        })
+        .catch(error => {
+          console.error('Error fetching products:', error);
+        });
+    },
+
+    // ... (other methods if needed) ...
+
   },
 };
 </script>
+
 <style scoped>
-.styled-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.styled-table th, .styled-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.styled-table th {
-  background-color: #f2f2f2;
-}
-
-.styled-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.styled-table tbody tr:hover {
-  background-color: #f5f5f5;
-}
+/* ... (existing styles) ... */
 </style>

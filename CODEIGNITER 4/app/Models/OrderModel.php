@@ -12,7 +12,8 @@ class OrderModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['customer_name','customer_address', 'product_name', 'status', 'product_description', 'product_price', 'quantity', 'total_amount', 'reason'];
+    protected $allowedFields = ['customer_name', 'customer_address', 'product_name', 'status', 'product_description', 'product_price', 'quantity', 'total_amount', 'reason', 'sugar_variety', 'sugar_level', 'size', 'addons'];
+
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
