@@ -1,0 +1,434 @@
+CRITICAL - 2023-12-29 10:34:58 --> Undefined array key "id"
+in APPPATH\Controllers\OrderController.php on line 56.
+ 1 APPPATH\Controllers\OrderController.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->FindOrders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 10:35:10 --> Undefined array key "id"
+in APPPATH\Controllers\OrderController.php on line 56.
+ 1 APPPATH\Controllers\OrderController.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->FindOrders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 10:35:59 --> Undefined array key "id"
+in APPPATH\Controllers\OrderController.php on line 57.
+ 1 APPPATH\Controllers\OrderController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->FindOrders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 10:36:33 --> Undefined array key "id"
+in APPPATH\Controllers\OrderController.php on line 57.
+ 1 APPPATH\Controllers\OrderController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->FindOrders()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:42:23 --> Undefined property: stdClass::$order_id
+in APPPATH\Controllers\OrderController.php on line 104.
+ 1 APPPATH\Controllers\OrderController.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$order_id', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:43:39 --> Undefined property: stdClass::$order_id
+in APPPATH\Controllers\OrderController.php on line 104.
+ 1 APPPATH\Controllers\OrderController.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$order_id', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:44:12 --> Undefined property: stdClass::$orderId
+in APPPATH\Controllers\OrderController.php on line 104.
+ 1 APPPATH\Controllers\OrderController.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$orderId', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:44:13 --> Undefined property: stdClass::$orderId
+in APPPATH\Controllers\OrderController.php on line 104.
+ 1 APPPATH\Controllers\OrderController.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$orderId', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:44:16 --> Undefined property: stdClass::$orderId
+in APPPATH\Controllers\OrderController.php on line 104.
+ 1 APPPATH\Controllers\OrderController.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$orderId', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:44:16 --> Undefined property: stdClass::$orderId
+in APPPATH\Controllers\OrderController.php on line 104.
+ 1 APPPATH\Controllers\OrderController.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$orderId', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:52:02 --> Undefined property: App\Controllers\OrderController::$input
+in APPPATH\Controllers\OrderController.php on line 103.
+ 1 APPPATH\Controllers\OrderController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:52:04 --> Undefined property: App\Controllers\OrderController::$input
+in APPPATH\Controllers\OrderController.php on line 103.
+ 1 APPPATH\Controllers\OrderController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:53:13 --> Undefined property: App\Controllers\OrderController::$input
+in APPPATH\Controllers\OrderController.php on line 103.
+ 1 APPPATH\Controllers\OrderController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:53:14 --> Undefined property: App\Controllers\OrderController::$input
+in APPPATH\Controllers\OrderController.php on line 103.
+ 1 APPPATH\Controllers\OrderController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:53:14 --> Undefined property: App\Controllers\OrderController::$input
+in APPPATH\Controllers\OrderController.php on line 103.
+ 1 APPPATH\Controllers\OrderController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:53:14 --> Undefined property: App\Controllers\OrderController::$input
+in APPPATH\Controllers\OrderController.php on line 103.
+ 1 APPPATH\Controllers\OrderController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$input', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:06 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:09 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:09 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:10 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:10 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:11 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:54:11 --> Undefined property: App\Controllers\OrderController::$load
+in APPPATH\Controllers\OrderController.php on line 109.
+ 1 APPPATH\Controllers\OrderController.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\OrderController::$load', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:55:35 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::get_where()
+in APPPATH\Models\OrderModel.php on line 49.
+ 1 APPPATH\Controllers\OrderController.php(112): App\Models\OrderModel->getOrderById(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:55:36 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::get_where()
+in APPPATH\Models\OrderModel.php on line 49.
+ 1 APPPATH\Controllers\OrderController.php(112): App\Models\OrderModel->getOrderById(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 11:55:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::get_where()
+in APPPATH\Models\OrderModel.php on line 49.
+ 1 APPPATH\Controllers\OrderController.php(112): App\Models\OrderModel->getOrderById(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:01 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:04 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:22 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:25 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:28 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:28 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 15:45:29 --> Class "Route" not found
+in APPPATH\Config\Routes.php on line 50.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:23:40 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:23:43 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:24:44 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:25:57 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:25:59 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:26:00 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(165): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->highestBoughtProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:26:02 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(165): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->highestBoughtProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:26:55 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:27:02 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:28:22 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:28:24 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:28:51 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:29:21 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 16:35:21 --> Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+in SYSTEMPATH\Format\JSONFormatter.php on line 43.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(43): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(98): App\Controllers\ProductController->format([...])
+ 4 APPPATH\Controllers\ProductController.php(132): App\Controllers\ProductController->respond([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->Products()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 17:16:33 --> Undefined property: stdClass::$id
+in APPPATH\Controllers\OrderController.php on line 127.
+ 1 APPPATH\Controllers\OrderController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')
+CRITICAL - 2023-12-29 17:19:33 --> Undefined property: stdClass::$id
+in APPPATH\Controllers\OrderController.php on line 127.
+ 1 APPPATH\Controllers\OrderController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id', 'C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\app\\Controllers\\OrderController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\OrderController->cancelOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(89): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Capstone\\CODEIGNITER 4\\public\\index.php')

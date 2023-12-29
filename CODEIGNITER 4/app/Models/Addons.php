@@ -4,15 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class OrderModel extends Model
+class Addons extends Model
 {
-    protected $table            = 'orders';
-    protected $primaryKey       = 'order_id';
+    protected $table            = 'addons';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['customer_name','customer_address', 'product_name', 'status', 'product_description', 'product_price', 'quantity', 'total_amount', 'reason'];
+    protected $allowedFields    = ['name', 'description', 'price'];
+
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
@@ -36,20 +37,4 @@ class OrderModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function getOrdersByUserId($userId)
-    {
-        return $this->where('user_id', $userId)->findAll();
-    }
-
-    public function cancelOrder($order_id)
-    {
-        // Implement cancellation logic, for example, update the order status to canceled
-        $data = ['status' => 'canceled'];
-        $this->where('id', $order_id)->update($data);
-    }
-    public function getOrderDetails($orderId)
-    {
-        return $this->find($orderId);
-    }
 }

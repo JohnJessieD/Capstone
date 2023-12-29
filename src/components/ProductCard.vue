@@ -30,7 +30,7 @@
       <v-row>
         <v-col v-for="product in paginatedProducts" :key="product.id" cols="12" md="4">
           <v-card class="pa-3 mb-4">
-            <v-img :src="product.image" :alt="product.name" class="mb-3"></v-img>
+            <v-img :src="product.image" class="mb-3"></v-img>
             <v-card-title class="headline">{{ product.name }}</v-card-title>
             <v-card-text>{{ product.description }}</v-card-text>
             <v-card-subtitle class="mb-2">$ {{ product.price }}</v-card-subtitle>
@@ -44,22 +44,27 @@
 
       <!-- Product details modal -->
       <v-dialog v-model="showModal" max-width="400">
-        <v-card>
-          <v-card-title>Product Details</v-card-title>
-          <v-card-text>
-            <h3>{{ selectedProduct.name }}</h3>
-            <p>{{ selectedProduct.description }}</p>
-            <div>Price: $ {{ selectedProduct.price }}</div>
-            <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
-            <v-text-field v-model="total_amount" label="Total" type="number" min="1" :readonly="true"></v-text-field>
-            <v-text-field v-model="customer_name" label="Customer Name" :readonly="true"></v-text-field>
-          </v-card-text>
-          <v-card-actions>
-            <v-btn @click="buy" color="primary">Buy</v-btn>
-            <v-btn @click="closeModal" color="error">Cancel</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+  <v-card>
+    <v-card-title>Product Details</v-card-title>
+    <v-card-text>
+      <h3>{{ selectedProduct.name }}</h3>
+      <p>{{ selectedProduct.description }}</p>
+      <div>Price: $ {{ selectedProduct.price }}</div>
+      <div>UPC: {{ selectedProduct.upc }}</div>
+      <v-text-field v-model="quantity" label="Quantity" type="number" min="1" @input="updateTotalAmount"></v-text-field>
+      <v-text-field v-model="total_amount" label="Total" type="number" min="1" :readonly="true"></v-text-field>
+
+      <!-- Add these fields for user input -->
+      <v-text-field v-model="customer_name" label="Customer Name"></v-text-field>
+      <v-text-field v-model="customer_address" label="Customer Address"></v-text-field>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn @click="buy" color="primary">Buy</v-btn>
+      <v-btn @click="closeModal" color="error">Cancel</v-btn>
+    </v-card-actions>
+  </v-card>
+</v-dialog>
+
     </v-container>
   </v-main>
 </template>
@@ -77,6 +82,8 @@ export default {
       customer_name: '',
       quantity: 1,
       total_amount: 0,
+      customer_name: '',
+      customer_address: '',
       orders: [],
       orderBy: 'name',
       orderDirection: 'asc',
@@ -85,6 +92,7 @@ export default {
       selectedCategory: 'All',
       currentPage: 1,
       itemsPerPage: 9,
+      image: '',
     };
   },
   computed: {
@@ -129,10 +137,14 @@ export default {
     this.fetchCategories();
   },
   methods: {
+    handleImageChange(event) {
+      this.formData.image = event.target.files[0];
+    },
     async fetchProducts() {
       try {
         const response = await axios.get('/api/products');
         this.products = response.data;
+        console.log('Product Images:', this.products.map(product => product.image));
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -164,22 +176,33 @@ export default {
     buy() {
       const order = {
         customer_name: this.customer_name,
+        customer_address: this.customer_address,
         product_name: this.selectedProduct.name,
         product_description: this.selectedProduct.description,
         product_price: this.selectedProduct.price,
         quantity: parseInt(this.quantity),
         total_amount: this.total_amount,
+        product_upc: this.selectedProduct.upc
       };
 
       this.orders.push(order);
 
-      axios.post('/api/submitOrder', order)
-        .then(response => {
-          console.log('Order submitted successfully:', response.data);
-        })
-        .catch(error => {
-          console.error('Error submitting order:', error);
-        });
+axios.post('/api/submitOrder', order)
+  .then(response => {
+    // Assuming the response contains the order ID or additional information
+    console.log('Order submitted successfully:', response.data);
+
+    // If needed, update the local order with additional information from the response
+    // For example, if the backend assigns an order ID, you might want to update your local order
+    const submittedOrder = response.data.order;
+    const localOrderIndex = this.orders.findIndex(o => o.product_upc === submittedOrder.product_upc);
+    if (localOrderIndex !== -1) {
+      this.orders[localOrderIndex] = submittedOrder;
+    }
+  })
+  .catch(error => {
+    console.error('Error submitting order:', error);
+  });
 
       this.showModal = false;
       this.quantity = 1;

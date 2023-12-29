@@ -42,3 +42,11 @@ $routes->put('/api/update_user/(:num)', 'UserController::update_user/$1'); // Ro
 $routes->delete('/api/delete/(:num)', 'UserController::delete_user/$1'); // Route to delete a user by ID
 
 $routes->get('/api/users', 'Usercontroller::users');
+$routes->get('api/addons', 'OrderController::addons');
+
+
+$routes->delete('/api/OrderedProducts/{id}', 'OrderController::cancelOrder/$1');
+$routes->get('/api/GetOrderDetails/(:num)', 'OrderController::getOrderDetails/$1');
+$routes->get('/api/OrderDetails/{Id}', 'OrderController::OrderDetails');
+$routes->post('/api/cancelOrder', 'OrderController::cancelOrder');
+$routes->post('api/deleteOrder/(:num)', 'OrderController::deleteOrder/$1');
